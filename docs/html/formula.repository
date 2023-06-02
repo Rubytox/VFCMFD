@@ -1,0 +1,7 @@
+\form#0:$X = \{x_1, ..., x_n\}$
+\form#1:$F = \{f_1, ..., f_n\}$
+\form#2:$i \in [1, n]$
+\form#3:$D = \{d_1, ..., d_{n-1}\}$
+\form#4:$\forall j \in [1, n]\setminus\lbrace i\rbrace,\; d_j = ||f_i - f_j||_2$
+\form#5:$D$
+\form#6:$ \forall j \in [\mathrm{minIdx}, \mathrm{maxIdx}], comp(pts[i], pts[j]) < \mathrm{threshold}$

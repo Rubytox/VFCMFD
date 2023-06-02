@@ -1,0 +1,12 @@
+<map id="include/line.hpp" name="include/line.hpp">
+<area shape="rect" id="node2" href="$_clustered_line_8hpp.html" title="include/ClusteredLine.hpp" alt="" coords="197,80,369,107"/>
+<area shape="rect" id="node3" href="$dbscan_8hpp.html" title="include/dbscan.hpp" alt="" coords="31,155,165,181"/>
+<area shape="rect" id="node4" href="$copy_move_detector_8hpp.html" title="include/copyMoveDetector.hpp" alt="" coords="141,229,343,256"/>
+<area shape="rect" id="node9" href="$surf_8hpp.html" title="include/surf.hpp" alt="" coords="465,80,579,107"/>
+<area shape="rect" id="node11" href="$line_8cpp.html" title="src/line.cpp" alt="" coords="604,80,693,107"/>
+<area shape="rect" id="node8" href="$_clustered_line_8cpp.html" title="src/ClusteredLine.cpp" alt="" coords="241,155,390,181"/>
+<area shape="rect" id="node7" href="$dbscan_8cpp.html" title="src/dbscan.cpp" alt="" coords="5,229,116,256"/>
+<area shape="rect" id="node5" href="$copy_move_detector_8cpp.html" title="src/copyMoveDetector.cpp" alt="" coords="71,304,250,331"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="275,304,372,331"/>
+<area shape="rect" id="node10" href="$surf_8cpp.html" title="src/surf.cpp" alt="" coords="477,155,567,181"/>
+</map>

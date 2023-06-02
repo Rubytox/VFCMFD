@@ -1,0 +1,1 @@
+Number of keypoints: 6705

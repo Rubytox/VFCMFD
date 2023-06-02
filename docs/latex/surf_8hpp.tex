@@ -1,0 +1,129 @@
+\hypertarget{surf_8hpp}{}\section{include/surf.hpp File Reference}
+\label{surf_8hpp}\index{include/surf.\+hpp@{include/surf.\+hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/features2d.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/xfeatures2d/nonfree.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}line.\+hpp\char`\"{}}\newline
+Include dependency graph for surf.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{surf_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{surf_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Mat \hyperlink{surf_8hpp_a3bac63b404cf6e8687db7fe970f13f35}{surf\+\_\+analysis} (const cv\+::\+Mat \&src, int min\+Hessian=400)
+\item 
+cv\+::\+Mat \hyperlink{surf_8hpp_ab95a7399b3149637f6db7eda99d2bce0}{surf\+\_\+matching} (const cv\+::\+Mat \&img1, const cv\+::\+Mat \&img2, int min\+Hessian=400)
+\item 
+cv\+::\+Mat \hyperlink{surf_8hpp_afc448db87c6171990310523fea935500}{surf\+\_\+improved} (const cv\+::\+Mat \&img, int min\+Hessian=400)
+\item 
+bool \hyperlink{surf_8hpp_acb9701de26ca88858787a40d222b8065}{are\+Not\+Near} (const cv\+::\+Point2f \&point1, const cv\+::\+Point2f \&point2)
+\item 
+cv\+::\+Mat \hyperlink{surf_8hpp_a98ca75d61f1f3338ffea3b7a639649d5}{parallel\+Lines} (const cv\+::\+Mat \&img)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file defines some functions that will be used to apply the S\+U\+RF algorithm on images. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{surf_8hpp_acb9701de26ca88858787a40d222b8065}\label{surf_8hpp_acb9701de26ca88858787a40d222b8065}} 
+\index{surf.\+hpp@{surf.\+hpp}!are\+Not\+Near@{are\+Not\+Near}}
+\index{are\+Not\+Near@{are\+Not\+Near}!surf.\+hpp@{surf.\+hpp}}
+\subsubsection{\texorpdfstring{are\+Not\+Near()}{areNotNear()}}
+{\footnotesize\ttfamily bool are\+Not\+Near (\begin{DoxyParamCaption}\item[{const cv\+::\+Point2f \&}]{point1,  }\item[{const cv\+::\+Point2f \&}]{point2 }\end{DoxyParamCaption})}
+
+Helper function used in surf\+\_\+matching algorithm\+: it checks whether two points are near to each other. In this function, p1 is near to p2 if p1 is one of the eight neighbours of p2 or is equal to p2 \+:
+
++---+-\/---+---+ $\vert$ a $\vert$ b $\vert$ c $\vert$ +---+-\/---+---+ $\vert$ d $\vert$ p2 $\vert$ e $\vert$ p1 is near to p2 $<$==$>$ p1 == p2 or p1 in \mbox{[}a, h\mbox{]} +---+-\/---+---+ $\vert$ f $\vert$ g $\vert$ h $\vert$ +---+-\/---+---+
+
+Note\+: this relation is symmetric.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & The first point. \\
+\hline
+{\em point2} & The second point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point1 is not near to point2, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{surf_8hpp_a98ca75d61f1f3338ffea3b7a639649d5}\label{surf_8hpp_a98ca75d61f1f3338ffea3b7a639649d5}} 
+\index{surf.\+hpp@{surf.\+hpp}!parallel\+Lines@{parallel\+Lines}}
+\index{parallel\+Lines@{parallel\+Lines}!surf.\+hpp@{surf.\+hpp}}
+\subsubsection{\texorpdfstring{parallel\+Lines()}{parallelLines()}}
+{\footnotesize\ttfamily cv\+::\+Mat parallel\+Lines (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{surf_8hpp_a3bac63b404cf6e8687db7fe970f13f35}\label{surf_8hpp_a3bac63b404cf6e8687db7fe970f13f35}} 
+\index{surf.\+hpp@{surf.\+hpp}!surf\+\_\+analysis@{surf\+\_\+analysis}}
+\index{surf\+\_\+analysis@{surf\+\_\+analysis}!surf.\+hpp@{surf.\+hpp}}
+\subsubsection{\texorpdfstring{surf\+\_\+analysis()}{surf\_analysis()}}
+{\footnotesize\ttfamily cv\+::\+Mat surf\+\_\+analysis (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{src,  }\item[{int}]{min\+Hessian = {\ttfamily 400} }\end{DoxyParamCaption})}
+
+This function only detects S\+U\+RF keypoints and draws them on the source image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & The source image. \\
+\hline
+{\em min\+Hessian} & The value of the Hessian threshold in the S\+U\+RF algorithm.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A matrix representing the source image with the S\+U\+RF keypoints drawn on it. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{surf_8hpp_afc448db87c6171990310523fea935500}\label{surf_8hpp_afc448db87c6171990310523fea935500}} 
+\index{surf.\+hpp@{surf.\+hpp}!surf\+\_\+improved@{surf\+\_\+improved}}
+\index{surf\+\_\+improved@{surf\+\_\+improved}!surf.\+hpp@{surf.\+hpp}}
+\subsubsection{\texorpdfstring{surf\+\_\+improved()}{surf\_improved()}}
+{\footnotesize\ttfamily cv\+::\+Mat surf\+\_\+improved (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{int}]{min\+Hessian = {\ttfamily 400} }\end{DoxyParamCaption})}
+
+This function implements the algorithm presented in the paper\+: \char`\"{}\+A S\+I\+F\+T-\/\+Based Forensic Method for Copy–\+Move Attack Detection 
+ and Transformation Recovery\char`\"{}. It detects S\+U\+RF keypoints using the regular S\+U\+RF algorithm, but the matching process is customized in order to fit our needs \+: it is done on only one image instead of two.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The source image. \\
+\hline
+{\em min\+Hessian} & The value of the Hessian threshold in the S\+U\+RF algorithm.\\
+\hline
+{\em A} & matrix representing the source image, with matches between similar areas drawn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{surf_8hpp_ab95a7399b3149637f6db7eda99d2bce0}\label{surf_8hpp_ab95a7399b3149637f6db7eda99d2bce0}} 
+\index{surf.\+hpp@{surf.\+hpp}!surf\+\_\+matching@{surf\+\_\+matching}}
+\index{surf\+\_\+matching@{surf\+\_\+matching}!surf.\+hpp@{surf.\+hpp}}
+\subsubsection{\texorpdfstring{surf\+\_\+matching()}{surf\_matching()}}
+{\footnotesize\ttfamily cv\+::\+Mat surf\+\_\+matching (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img1,  }\item[{const cv\+::\+Mat \&}]{img2,  }\item[{int}]{min\+Hessian = {\ttfamily 400} }\end{DoxyParamCaption})}
+
+This function detects S\+U\+RF keypoints on two images, and then computes the matching keypoints between both images.
+
+Note\+: This function should be used when img2 is part of img1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img1} & The source image. \\
+\hline
+{\em img2} & An image usually extracted from img1. It can be applied transformations such as rotations, scaling... \\
+\hline
+{\em min\+Hessian} & The value of the Hessian threshold in the S\+U\+RF algorithm.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A matrix representing the two images side by side, with matches between the keypoints drawn. 
+\end{DoxyReturn}

@@ -1,0 +1,292 @@
+.TH "defals::Line" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defals::Line
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <line\&.hpp>\fP
+.PP
+Inherited by \fBdefals::ClusteredLine\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLine\fP (\fBInterestPoint\fP point1, \fBInterestPoint\fP point2)"
+.br
+.ti -1c
+.RI "\fBLine\fP (const \fBLine\fP &other)"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (cv::Mat &canvas, const cv::Scalar &color=cv::Scalar(0, 0, 255), int thickness=3) const"
+.br
+.ti -1c
+.RI "void \fBprolonger\fP (cv::Mat &canvas, cv::Scalar color=cv::Scalar(0, 255, 0), int thickness=3) const"
+.br
+.ti -1c
+.RI "void \fBprintPolar\fP () const"
+.br
+.ti -1c
+.RI "void \fBprintPolar3D\fP () const"
+.br
+.ti -1c
+.RI "void \fBprintCartes\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBtoStringCartes\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBtoStringDBSCAN\fP () const"
+.br
+.ti -1c
+.RI "double \fBdistanceOrigine\fP () const"
+.br
+.ti -1c
+.RI "\fBLine\fP \fBgetOrtho\fP () const"
+.br
+.ti -1c
+.RI "cv::Vec2f \fBdirector\fP () const"
+.br
+.ti -1c
+.RI "cv::Point2f * \fBintersect\fP (const \fBLine\fP &other) const"
+.br
+.ti -1c
+.RI "void \fBtranslate\fP (double dx, double dy)"
+.br
+.ti -1c
+.RI "double \fBlength\fP () const"
+.br
+.ti -1c
+.RI "bool \fBproche\fP (const \fBLine\fP &other, int rhoTreshold=8000, double thetaThreshold=0\&.1) const"
+.br
+.ti -1c
+.RI "void \fBinvert\fP ()"
+.br
+.ti -1c
+.RI "double \fBpente\fP () const"
+.br
+.ti -1c
+.RI "bool \fBequals\fP (const \fBLine\fP &other) const"
+.br
+.ti -1c
+.RI "const \fBInterestPoint\fP & \fBgetPoint1\fP () const"
+.br
+.ti -1c
+.RI "const \fBInterestPoint\fP & \fBgetPoint2\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetTheta\fP () const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cv::Point2f \fBortho\fP () const"
+.br
+.ti -1c
+.RI "void \fBcomputePolar\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeCartes\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBInterestPoint\fP \fB_point1\fP"
+.br
+.ti -1c
+.RI "\fBInterestPoint\fP \fB_point2\fP"
+.br
+.ti -1c
+.RI "double \fB_a\fP"
+.br
+.ti -1c
+.RI "double \fB_b\fP"
+.br
+.ti -1c
+.RI "double \fB_c\fP"
+.br
+.ti -1c
+.RI "cv::Point2f \fB_origineOrtho\fP"
+.br
+.ti -1c
+.RI "cv::Point2f \fB_pointOrtho\fP"
+.br
+.ti -1c
+.RI "double \fB_rho\fP"
+.br
+.ti -1c
+.RI "double \fB_theta\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provided various representations of a line :
+.IP "\(bu" 2
+cartesian coordinates
+.IP "\(bu" 2
+polar coordinates
+.IP "\(bu" 2
+start point / end point representation 
+.PP
+
+.PP
+Definition at line 23 of file line\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Line::Line (\fBInterestPoint\fP point1, \fBInterestPoint\fP point2)"
+
+.PP
+Definition at line 9 of file line\&.cpp\&.
+.SS "Line::Line (const \fBLine\fP & other)"
+
+.PP
+Definition at line 18 of file line\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Line::computeCartes ()\fC [private]\fP"
+
+.PP
+Definition at line 90 of file line\&.cpp\&.
+.SS "void Line::computePolar ()\fC [private]\fP"
+
+.PP
+Definition at line 108 of file line\&.cpp\&.
+.SS "Vec2f Line::director () const"
+
+.PP
+Definition at line 150 of file line\&.cpp\&.
+.SS "double Line::distanceOrigine () const"
+
+.PP
+Definition at line 27 of file line\&.cpp\&.
+.SS "void Line::draw (cv::Mat & canvas, const cv::Scalar & color = \fCcv::Scalar(0, 0, 255)\fP, int thickness = \fC3\fP) const"
+
+.PP
+Definition at line 32 of file line\&.cpp\&.
+.SS "bool Line::equals (const \fBLine\fP & other) const"
+
+.PP
+Definition at line 182 of file line\&.cpp\&.
+.SS "\fBLine\fP Line::getOrtho () const"
+
+.PP
+Definition at line 75 of file line\&.cpp\&.
+.SS "const \fBInterestPoint\fP & Line::getPoint1 () const"
+
+.PP
+Definition at line 242 of file line\&.cpp\&.
+.SS "const \fBInterestPoint\fP & Line::getPoint2 () const"
+
+.PP
+Definition at line 246 of file line\&.cpp\&.
+.SS "double Line::getTheta () const"
+
+.PP
+Definition at line 257 of file line\&.cpp\&.
+.SS "Point2f * Line::intersect (const \fBLine\fP & other) const"
+
+.PP
+Definition at line 155 of file line\&.cpp\&.
+.SS "void Line::invert ()"
+
+.PP
+Definition at line 204 of file line\&.cpp\&.
+.SS "double Line::length () const"
+
+.PP
+Definition at line 103 of file line\&.cpp\&.
+.SS "Point2f Line::ortho () const\fC [private]\fP"
+
+.PP
+Definition at line 80 of file line\&.cpp\&.
+.SS "double Line::pente () const"
+
+.PP
+Definition at line 250 of file line\&.cpp\&.
+.SS "void Line::printCartes () const"
+
+.PP
+Definition at line 131 of file line\&.cpp\&.
+.SS "void Line::printPolar () const"
+
+.PP
+Definition at line 121 of file line\&.cpp\&.
+.SS "void Line::printPolar3D () const"
+
+.PP
+Definition at line 126 of file line\&.cpp\&.
+.SS "bool Line::proche (const \fBLine\fP & other, int rhoTreshold = \fC8000\fP, double thetaThreshold = \fC0\&.1\fP) const"
+
+.PP
+Definition at line 199 of file line\&.cpp\&.
+.SS "void Line::prolonger (cv::Mat & canvas, cv::Scalar color = \fCcv::Scalar(0, 255, 0)\fP, int thickness = \fC3\fP) const"
+
+.PP
+Definition at line 39 of file line\&.cpp\&.
+.SS "string Line::toString () const"
+
+.PP
+Definition at line 137 of file line\&.cpp\&.
+.SS "string Line::toStringCartes () const"
+
+.PP
+Definition at line 142 of file line\&.cpp\&.
+.SS "string Line::toStringDBSCAN () const"
+
+.PP
+Definition at line 261 of file line\&.cpp\&.
+.SS "void Line::translate (double dx, double dy)"
+
+.PP
+Definition at line 189 of file line\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double defals::Line::_a\fC [private]\fP"
+
+.PP
+Definition at line 110 of file line\&.hpp\&.
+.SS "double defals::Line::_b\fC [private]\fP"
+
+.PP
+Definition at line 111 of file line\&.hpp\&.
+.SS "double defals::Line::_c\fC [private]\fP"
+
+.PP
+Definition at line 112 of file line\&.hpp\&.
+.SS "cv::Point2f defals::Line::_origineOrtho\fC [private]\fP"
+
+.PP
+Definition at line 114 of file line\&.hpp\&.
+.SS "\fBInterestPoint\fP defals::Line::_point1\fC [private]\fP"
+
+.PP
+Definition at line 104 of file line\&.hpp\&.
+.SS "\fBInterestPoint\fP defals::Line::_point2\fC [private]\fP"
+
+.PP
+Definition at line 105 of file line\&.hpp\&.
+.SS "cv::Point2f defals::Line::_pointOrtho\fC [private]\fP"
+
+.PP
+Definition at line 115 of file line\&.hpp\&.
+.SS "double defals::Line::_rho\fC [private]\fP"
+
+.PP
+Definition at line 120 of file line\&.hpp\&.
+.SS "double defals::Line::_theta\fC [private]\fP"
+
+.PP
+Definition at line 121 of file line\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

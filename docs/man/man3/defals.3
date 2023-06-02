@@ -1,0 +1,146 @@
+.TH "defals" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defals
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBClusteredLine\fP"
+.br
+.ti -1c
+.RI "class \fBcopyMoveDetector\fP"
+.br
+.ti -1c
+.RI "class \fBInterestPoint\fP"
+.br
+.ti -1c
+.RI "class \fBInterestPoints\fP"
+.br
+.ti -1c
+.RI "class \fBLine\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBCluster\fP = std::vector< \fBLine\fP >"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrunMatches\fP (\fBcopyMoveDetector\fP &detector, int start, int end)"
+.br
+.ti -1c
+.RI "void \fBrunBetterMatches\fP (\fBcopyMoveDetector\fP &detector, int start, int end)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBInterestPoint\fP &pt1, const \fBInterestPoint\fP &pt2)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBInterestPoint\fP &pt1, const \fBInterestPoint\fP &pt2)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBLine\fP &first, const \fBLine\fP &second)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBLine\fP &first, const \fBLine\fP &second)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBLine\fP &line)"
+.br
+.ti -1c
+.RI "cv::Mat \fBfullPlane\fP (const cv::Mat &src, std::vector< \fBLine\fP > &lines, int thickness=3)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBdefals::Cluster\fP = typedef std::vector<\fBLine\fP>"
+This will help understand the code better\&. 
+.PP
+Definition at line 28 of file copyMoveDetector\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "cv::Mat defals::fullPlane (const cv::Mat & src, std::vector< \fBLine\fP > & lines, int thickness = \fC3\fP)"
+
+.SS "bool defals::operator!= (const \fBLine\fP & first, const \fBLine\fP & second)\fC [inline]\fP"
+
+.PP
+Definition at line 128 of file line\&.hpp\&.
+.SS "bool defals::operator< (const \fBInterestPoint\fP & pt1, const \fBInterestPoint\fP & pt2)\fC [inline]\fP"
+Basically, an \fBInterestPoint\fP is lower than another one if its angle is lower\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpt1\fP The first point\&. 
+.br
+\fIpt2\fP The second point\&.
+.RE
+.PP
+i
+.PP
+\fBReturns:\fP
+.RS 4
+True if pt1 < pt2, false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file InterestPoint\&.hpp\&.
+.SS "std::ostream& defals::operator<< (std::ostream & os, const \fBLine\fP & line)\fC [inline]\fP"
+
+.PP
+Definition at line 133 of file line\&.hpp\&.
+.SS "bool defals::operator== (const \fBInterestPoint\fP & pt1, const \fBInterestPoint\fP & pt2)\fC [inline]\fP"
+Two \fBInterestPoint\fP are equal if, and only if, they have the same orientation and the same descriptor\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpt1\fP The first point\&. 
+.br
+\fIpt2\fP The second point\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if pt1 == pt2, false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file InterestPoint\&.hpp\&.
+.SS "bool defals::operator== (const \fBLine\fP & first, const \fBLine\fP & second)\fC [inline]\fP"
+
+.PP
+Definition at line 124 of file line\&.hpp\&.
+.SS "void defals::runBetterMatches (\fBcopyMoveDetector\fP & detector, int start, int end)"
+
+.PP
+Definition at line 381 of file copyMoveDetector\&.cpp\&.
+.SS "void defals::runMatches (\fBcopyMoveDetector\fP & detector, int start, int end)"
+This function is a friend of \fBcopyMoveDetector\fP\&. It isn't part of the class because it is going to be called by a thread and a thread can't call a member function\&.
+.PP
+It computes all matches for keypoints in range [start, end[\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdetector\fP The detector we want to compute a match\&. 
+.br
+\fIstart\fP The start index\&. 
+.br
+\fIend\fP The end index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 370 of file copyMoveDetector\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

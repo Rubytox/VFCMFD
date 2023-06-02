@@ -1,0 +1,4 @@
+Scanning dependencies of target copyMoveCheck
+[ 12%] Building CXX object CMakeFiles/copyMoveCheck.dir/src/copyMoveDetector.cpp.o
+[ 25%] Linking CXX executable copyMoveCheck
+[100%] Built target copyMoveCheck

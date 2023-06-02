@@ -1,0 +1,589 @@
+\hypertarget{classdefals_1_1copy_move_detector}{}\section{defals\+:\+:copy\+Move\+Detector Class Reference}
+\label{classdefals_1_1copy_move_detector}\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+
+
+{\ttfamily \#include $<$copy\+Move\+Detector.\+hpp$>$}
+
+
+
+Collaboration diagram for defals\+:\+:copy\+Move\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classdefals_1_1copy_move_detector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefals_1_1copy_move_detector_acf2eb1bc6f3e65f3f638478441a58c8a}{copy\+Move\+Detector} (const std\+::string \&filename, const std\+::string \&masque\+Name=\char`\"{}\char`\"{}, int min\+Hessian=300, double matches\+Threshold=0.\+5)
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a97cd7553e415ef2cc85c9b8f1110d05b}{detect} ()
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a1dda27b106215ae248c5083536a2c001}{print\+Lines} () const
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a397e6715d0a274c67ed81735da36329f}{print\+Clusters} () const
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a9fd2ba369ce7ab6fb7f5a7b9c23f4eae}{print\+Info} () const
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_aba417dff2b877dacc4481b5bfd3786ed}{make\+Arff} (const std\+::string \&filename) const
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a5e773c10c8cbec7abb70ecf54422c19a}{show} (const std\+::string \&filename=\char`\"{}lines\char`\"{}, const bool keypoints=true, const bool lines=true, const bool clusters=true, const bool hulls=true, const std\+::string \&masque\+Name=\char`\"{}\char`\"{}, const bool mask=false) const
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_aa5905be2d93768f3baddd750204e362c}{random\+Lines} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_ac9025dec1bdc571c914fe704a8dac252}{compute\+Keypoints} ()
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_ad92c77ad47c3af47b8d2383a7a6b2753}{compute\+Matches} ()
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a43c24f4f6cf44f291da75733d2441ffe}{compute\+Match} (int i)
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_ada9b809bd69be7dc9a6535b1c07967b7}{compute\+Better\+Matches} ()
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_ab506d8bea186d8b17e0c46b8dc94be4b}{compute\+Better\+Match} (int i)
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a72a06ac231780effab58c27dfff57940}{compute\+Lines} (double min\+Length=30)
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a49c2c1503a2dd4ec039c2407c4da2afe}{arrange\+Lines} ()
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a34d3aafc7e8cfacab0a1f2aa0d45d655}{compute\+Clusters} (int threshold=10)
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a3878ac6d8549f3f18ddc02439504b3a0}{compute\+Hull} ()
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a2ba4bcb4cd0f752c84ceb411052d1117}{compute\+Mask} (int kernel\+Size=3)
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a13205daa0d2bf548f1c284ab7656efff}{compute\+All\+Scores} ()
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_a4eba5b33edb3a8aef5e19f769a17a3d8}{compute\+Scores} (double \&sensitivity, double \&specificity) const
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classdefals_1_1copy_move_detector_aa77b7daa6a859f58a09462d12d1a63ed}{save} (const cv\+::\+Mat \&img, const std\+::string \&filename=\char`\"{}lines\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classdefals_1_1copy_move_detector_a22c5159e48cc839ebd7959fd43f228d9}{\+\_\+min\+Hessian}
+\item 
+double \hyperlink{classdefals_1_1copy_move_detector_a800b15d314ae7f5cfea5d2d055af2bb1}{\+\_\+match\+Threshold}
+\item 
+std\+::string \hyperlink{classdefals_1_1copy_move_detector_aec9cb721f975705ca3074738420dae27}{\+\_\+filename}
+\item 
+cv\+::\+Mat \hyperlink{classdefals_1_1copy_move_detector_a87064ae3de9e131f78716bfc60c4ba15}{\+\_\+image}
+\item 
+cv\+::\+Mat \hyperlink{classdefals_1_1copy_move_detector_a4f87062f7eaeea1367e247e2115d776a}{\+\_\+mask}
+\item 
+\hyperlink{classdefals_1_1_interest_points}{Interest\+Points} \hyperlink{classdefals_1_1copy_move_detector_a6394341f692cf5c667da02689fbc2896}{\+\_\+interest\+Points}
+\item 
+std\+::vector$<$ std\+::vector$<$ \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} $>$ $>$ \hyperlink{classdefals_1_1copy_move_detector_a766de41cc00644410659d3aafe1de3f9}{\+\_\+all\+Matches}
+\item 
+std\+::vector$<$ \hyperlink{classdefals_1_1_line}{Line} $>$ \hyperlink{classdefals_1_1copy_move_detector_acb0c13ded5ad341e55335e742e8f7bcf}{\+\_\+lines}
+\item 
+std\+::vector$<$ \hyperlink{namespacedefals_a93b34e2e4f989ac1ebef9f660cf3a303}{Cluster} $>$ \hyperlink{classdefals_1_1copy_move_detector_aee0bff9a68b697e1c6cc3efe98ba43ce}{\+\_\+clusters}
+\item 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Point $>$ $>$ \hyperlink{classdefals_1_1copy_move_detector_a02e4b53bac8ff8a2c0156021a734c41b}{\+\_\+hulls}
+\item 
+cv\+::\+Mat \hyperlink{classdefals_1_1copy_move_detector_a797a8057e5c825a699230bf65e468036}{\+\_\+computed\+Mask}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_aa3e44592315f2f76400f306881b8abc7}{run\+Matches} (\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&detector, int start, int end)
+\item 
+void \hyperlink{classdefals_1_1copy_move_detector_ad712afef89bfd0c3580ef63a6d197069}{run\+Better\+Matches} (\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&detector, int start, int end)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a copy/move forgery detector. It provided the user with one main function {\itshape detect} which processes the image, and a function {\itshape show} which displays and saves the processed image. 
+
+Definition at line 36 of file copy\+Move\+Detector.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_acf2eb1bc6f3e65f3f638478441a58c8a}\label{classdefals_1_1copy_move_detector_acf2eb1bc6f3e65f3f638478441a58c8a}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!copy\+Move\+Detector@{copy\+Move\+Detector}}
+\index{copy\+Move\+Detector@{copy\+Move\+Detector}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{copy\+Move\+Detector()}{copyMoveDetector()}}
+{\footnotesize\ttfamily copy\+Move\+Detector\+::copy\+Move\+Detector (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{masque\+Name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{int}]{min\+Hessian = {\ttfamily 300},  }\item[{double}]{matches\+Threshold = {\ttfamily 0.5} }\end{DoxyParamCaption})}
+
+Creates a copy/move forgery detector object. We pass the hessian and matches threshold here.
+
+T\+O\+DO\+: -\/ min\+Hessian might be computed depending on image size or characteristics. For instance, we could compute the keypoints (this is fast usually), then with some statistics check whether we have enough keypoints.
+\begin{DoxyItemize}
+\item matches\+Threshold should be a constant as specified in the research paper. We need to check though whether 0.\+5 is a good enough value.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the image file. \\
+\hline
+{\em min\+Hessian} & The threshold value of Det(\+Hessian). \\
+\hline
+{\em matches\+Threshold} & The maximum ratio for two consecutives distances in matching algorithm. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file copy\+Move\+Detector.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a49c2c1503a2dd4ec039c2407c4da2afe}\label{classdefals_1_1copy_move_detector_a49c2c1503a2dd4ec039c2407c4da2afe}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!arrange\+Lines@{arrange\+Lines}}
+\index{arrange\+Lines@{arrange\+Lines}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{arrange\+Lines()}{arrangeLines()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::arrange\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function inverts all the lines that don\textquotesingle{}t respect the condition\+: start $<$ end with $<$ in lexicographical order (origin up left). 
+
+Definition at line 552 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a13205daa0d2bf548f1c284ab7656efff}\label{classdefals_1_1copy_move_detector_a13205daa0d2bf548f1c284ab7656efff}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+All\+Scores@{compute\+All\+Scores}}
+\index{compute\+All\+Scores@{compute\+All\+Scores}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+All\+Scores()}{computeAllScores()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+All\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 682 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classdefals_1_1copy_move_detector_a13205daa0d2bf548f1c284ab7656efff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_ab506d8bea186d8b17e0c46b8dc94be4b}\label{classdefals_1_1copy_move_detector_ab506d8bea186d8b17e0c46b8dc94be4b}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Better\+Match@{compute\+Better\+Match}}
+\index{compute\+Better\+Match@{compute\+Better\+Match}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Better\+Match()}{computeBetterMatch()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Better\+Match (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 403 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1copy_move_detector_ab506d8bea186d8b17e0c46b8dc94be4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1copy_move_detector_ab506d8bea186d8b17e0c46b8dc94be4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_ada9b809bd69be7dc9a6535b1c07967b7}\label{classdefals_1_1copy_move_detector_ada9b809bd69be7dc9a6535b1c07967b7}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Better\+Matches@{compute\+Better\+Matches}}
+\index{compute\+Better\+Matches@{compute\+Better\+Matches}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Better\+Matches()}{computeBetterMatches()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Better\+Matches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 504 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1copy_move_detector_ada9b809bd69be7dc9a6535b1c07967b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a34d3aafc7e8cfacab0a1f2aa0d45d655}\label{classdefals_1_1copy_move_detector_a34d3aafc7e8cfacab0a1f2aa0d45d655}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Clusters@{compute\+Clusters}}
+\index{compute\+Clusters@{compute\+Clusters}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Clusters()}{computeClusters()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Clusters (\begin{DoxyParamCaption}\item[{int}]{threshold = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function computes all clusters using \hyperlink{class_d_b_s_c_a_n}{D\+B\+S\+C\+AN} algorithm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & Minimal number of lines in a cluster. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 573 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a3878ac6d8549f3f18ddc02439504b3a0}\label{classdefals_1_1copy_move_detector_a3878ac6d8549f3f18ddc02439504b3a0}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Hull@{compute\+Hull}}
+\index{compute\+Hull@{compute\+Hull}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Hull()}{computeHull()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 604 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_ac9025dec1bdc571c914fe704a8dac252}\label{classdefals_1_1copy_move_detector_ac9025dec1bdc571c914fe704a8dac252}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Keypoints@{compute\+Keypoints}}
+\index{compute\+Keypoints@{compute\+Keypoints}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Keypoints()}{computeKeypoints()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Keypoints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function applies the S\+U\+RF algorithm in order to find keypoints for the image. 
+
+Definition at line 294 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a72a06ac231780effab58c27dfff57940}\label{classdefals_1_1copy_move_detector_a72a06ac231780effab58c27dfff57940}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Lines@{compute\+Lines}}
+\index{compute\+Lines@{compute\+Lines}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Lines()}{computeLines()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Lines (\begin{DoxyParamCaption}\item[{double}]{min\+Length = {\ttfamily 30} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function creates all the lines by associating each keypoint to its matched keypoints. It doesn\textquotesingle{}t add the lines whose length is shorter than {\itshape min\+Length}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Length} & Minimum length required for accepting a line. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 535 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classdefals_1_1copy_move_detector_a72a06ac231780effab58c27dfff57940_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a2ba4bcb4cd0f752c84ceb411052d1117}\label{classdefals_1_1copy_move_detector_a2ba4bcb4cd0f752c84ceb411052d1117}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Mask@{compute\+Mask}}
+\index{compute\+Mask@{compute\+Mask}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Mask()}{computeMask()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Mask (\begin{DoxyParamCaption}\item[{int}]{kernel\+Size = {\ttfamily 3} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 620 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a43c24f4f6cf44f291da75733d2441ffe}\label{classdefals_1_1copy_move_detector_a43c24f4f6cf44f291da75733d2441ffe}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Match@{compute\+Match}}
+\index{compute\+Match@{compute\+Match}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Match()}{computeMatch()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Match (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function computes matches for a specific keypoint. It calls {\itshape similarity\+Vector} in order to compute the similarity vector for keypoint {\itshape i} then adds to all\+Matches the matched keypoints.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the source keypoint in \+\_\+keypoints. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 319 of file copy\+Move\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classdefals_1_1copy_move_detector_a43c24f4f6cf44f291da75733d2441ffe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_ad92c77ad47c3af47b8d2383a7a6b2753}\label{classdefals_1_1copy_move_detector_ad92c77ad47c3af47b8d2383a7a6b2753}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Matches@{compute\+Matches}}
+\index{compute\+Matches@{compute\+Matches}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Matches()}{computeMatches()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Matches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function splits the keypoints indexes in descriptor\+Equals parts for each thread. Then it creates a thread and makes it process its own slice of keypoints. It waits for all threads to finish running before exiting. 
+
+Definition at line 484 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a4eba5b33edb3a8aef5e19f769a17a3d8}\label{classdefals_1_1copy_move_detector_a4eba5b33edb3a8aef5e19f769a17a3d8}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!compute\+Scores@{compute\+Scores}}
+\index{compute\+Scores@{compute\+Scores}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{compute\+Scores()}{computeScores()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::compute\+Scores (\begin{DoxyParamCaption}\item[{double \&}]{sensitivity,  }\item[{double \&}]{specificity }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+This function uses \+\_\+mask and \+\_\+computed\+Mask 
+
+Definition at line 641 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a97cd7553e415ef2cc85c9b8f1110d05b}\label{classdefals_1_1copy_move_detector_a97cd7553e415ef2cc85c9b8f1110d05b}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!detect@{detect}}
+\index{detect@{detect}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{detect()}{detect()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::detect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function runs all the detecting process by \+:
+\begin{DoxyItemize}
+\item computing keypoints in the image
+\item computing all matches between keypoints
+\item creating all the lines from the matches
+\item sorting the lines in clusters
+\item arranging clusters in order to have all the lines in the same direction 
+\end{DoxyItemize}
+
+Definition at line 60 of file copy\+Move\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{classdefals_1_1copy_move_detector_a97cd7553e415ef2cc85c9b8f1110d05b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_aba417dff2b877dacc4481b5bfd3786ed}\label{classdefals_1_1copy_move_detector_aba417dff2b877dacc4481b5bfd3786ed}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!make\+Arff@{make\+Arff}}
+\index{make\+Arff@{make\+Arff}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{make\+Arff()}{makeArff()}}
+{\footnotesize\ttfamily void defals\+::copy\+Move\+Detector\+::make\+Arff (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a397e6715d0a274c67ed81735da36329f}\label{classdefals_1_1copy_move_detector_a397e6715d0a274c67ed81735da36329f}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!print\+Clusters@{print\+Clusters}}
+\index{print\+Clusters@{print\+Clusters}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{print\+Clusters()}{printClusters()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::print\+Clusters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+This function prints all the clusters in no\+Cluster,rho,theta,length format. This may be useful for further processing. 
+
+Definition at line 113 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a9fd2ba369ce7ab6fb7f5a7b9c23f4eae}\label{classdefals_1_1copy_move_detector_a9fd2ba369ce7ab6fb7f5a7b9c23f4eae}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!print\+Info@{print\+Info}}
+\index{print\+Info@{print\+Info}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{print\+Info()}{printInfo()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::print\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 129 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1copy_move_detector_a9fd2ba369ce7ab6fb7f5a7b9c23f4eae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a1dda27b106215ae248c5083536a2c001}\label{classdefals_1_1copy_move_detector_a1dda27b106215ae248c5083536a2c001}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!print\+Lines@{print\+Lines}}
+\index{print\+Lines@{print\+Lines}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{print\+Lines()}{printLines()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::print\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+This function prints all the lines in rho,theta,length format. This may be useful for further processing. 
+
+Definition at line 102 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_aa5905be2d93768f3baddd750204e362c}\label{classdefals_1_1copy_move_detector_aa5905be2d93768f3baddd750204e362c}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!random\+Lines@{random\+Lines}}
+\index{random\+Lines@{random\+Lines}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{random\+Lines()}{randomLines()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::random\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 801 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1copy_move_detector_aa5905be2d93768f3baddd750204e362c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_aa77b7daa6a859f58a09462d12d1a63ed}\label{classdefals_1_1copy_move_detector_aa77b7daa6a859f58a09462d12d1a63ed}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!save@{save}}
+\index{save@{save}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::save (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{const std\+::string \&}]{filename = {\ttfamily \char`\"{}lines\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+This function is called by {\itshape show(const string\&, const bool, const bool, const bool)}. It resizes the canvas in which the clusters have been drawn and displays it to the user.
+
+If the user presses \textquotesingle{}s\textquotesingle{} key, the not resized canvas is saved to {\itshape filename}. The function exists if the user presses any key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The canvas to display. \\
+\hline
+{\em filename} & The filename to save the canvas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 285 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a5e773c10c8cbec7abb70ecf54422c19a}\label{classdefals_1_1copy_move_detector_a5e773c10c8cbec7abb70ecf54422c19a}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!show@{show}}
+\index{show@{show}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void copy\+Move\+Detector\+::show (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename = {\ttfamily \char`\"{}lines\char`\"{}},  }\item[{const bool}]{keypoints = {\ttfamily true},  }\item[{const bool}]{lines = {\ttfamily true},  }\item[{const bool}]{clusters = {\ttfamily true},  }\item[{const bool}]{hulls = {\ttfamily true},  }\item[{const std\+::string \&}]{masque\+Name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool}]{mask = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+Draws all the clusters on a copy of the image, and allows the user to save it to {\itshape filename} by pressing \textquotesingle{}s\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Destination filename if the image is saved. \\
+\hline
+{\em keypoints} & If set to true, keypoints are drawn on the canvas. \\
+\hline
+{\em lines} & If set to true, lines are drawn on the canvas. \\
+\hline
+{\em clusters} & If set to true, clusters are drawn on the canvas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 194 of file copy\+Move\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{classdefals_1_1copy_move_detector_a5e773c10c8cbec7abb70ecf54422c19a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_ad712afef89bfd0c3580ef63a6d197069}\label{classdefals_1_1copy_move_detector_ad712afef89bfd0c3580ef63a6d197069}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!run\+Better\+Matches@{run\+Better\+Matches}}
+\index{run\+Better\+Matches@{run\+Better\+Matches}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{run\+Better\+Matches}{runBetterMatches}}
+{\footnotesize\ttfamily void run\+Better\+Matches (\begin{DoxyParamCaption}\item[{\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&}]{detector,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_aa3e44592315f2f76400f306881b8abc7}\label{classdefals_1_1copy_move_detector_aa3e44592315f2f76400f306881b8abc7}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!run\+Matches@{run\+Matches}}
+\index{run\+Matches@{run\+Matches}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{run\+Matches}{runMatches}}
+{\footnotesize\ttfamily void run\+Matches (\begin{DoxyParamCaption}\item[{\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&}]{detector,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a766de41cc00644410659d3aafe1de3f9}\label{classdefals_1_1copy_move_detector_a766de41cc00644410659d3aafe1de3f9}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+all\+Matches@{\+\_\+all\+Matches}}
+\index{\+\_\+all\+Matches@{\+\_\+all\+Matches}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+all\+Matches}{\_allMatches}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\hyperlink{classdefals_1_1_interest_point}{Interest\+Point}$>$ $>$ defals\+::copy\+Move\+Detector\+::\+\_\+all\+Matches\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 98 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_aee0bff9a68b697e1c6cc3efe98ba43ce}\label{classdefals_1_1copy_move_detector_aee0bff9a68b697e1c6cc3efe98ba43ce}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+clusters@{\+\_\+clusters}}
+\index{\+\_\+clusters@{\+\_\+clusters}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+clusters}{\_clusters}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{namespacedefals_a93b34e2e4f989ac1ebef9f660cf3a303}{Cluster}$>$ defals\+::copy\+Move\+Detector\+::\+\_\+clusters\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 101 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a797a8057e5c825a699230bf65e468036}\label{classdefals_1_1copy_move_detector_a797a8057e5c825a699230bf65e468036}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+computed\+Mask@{\+\_\+computed\+Mask}}
+\index{\+\_\+computed\+Mask@{\+\_\+computed\+Mask}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+computed\+Mask}{\_computedMask}}
+{\footnotesize\ttfamily cv\+::\+Mat defals\+::copy\+Move\+Detector\+::\+\_\+computed\+Mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 104 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_aec9cb721f975705ca3074738420dae27}\label{classdefals_1_1copy_move_detector_aec9cb721f975705ca3074738420dae27}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+filename@{\+\_\+filename}}
+\index{\+\_\+filename@{\+\_\+filename}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+filename}{\_filename}}
+{\footnotesize\ttfamily std\+::string defals\+::copy\+Move\+Detector\+::\+\_\+filename\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 91 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a02e4b53bac8ff8a2c0156021a734c41b}\label{classdefals_1_1copy_move_detector_a02e4b53bac8ff8a2c0156021a734c41b}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+hulls@{\+\_\+hulls}}
+\index{\+\_\+hulls@{\+\_\+hulls}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+hulls}{\_hulls}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$cv\+::\+Point$>$ $>$ defals\+::copy\+Move\+Detector\+::\+\_\+hulls\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 103 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a87064ae3de9e131f78716bfc60c4ba15}\label{classdefals_1_1copy_move_detector_a87064ae3de9e131f78716bfc60c4ba15}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+image@{\+\_\+image}}
+\index{\+\_\+image@{\+\_\+image}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+image}{\_image}}
+{\footnotesize\ttfamily cv\+::\+Mat defals\+::copy\+Move\+Detector\+::\+\_\+image\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 93 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a6394341f692cf5c667da02689fbc2896}\label{classdefals_1_1copy_move_detector_a6394341f692cf5c667da02689fbc2896}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+interest\+Points@{\+\_\+interest\+Points}}
+\index{\+\_\+interest\+Points@{\+\_\+interest\+Points}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+interest\+Points}{\_interestPoints}}
+{\footnotesize\ttfamily \hyperlink{classdefals_1_1_interest_points}{Interest\+Points} defals\+::copy\+Move\+Detector\+::\+\_\+interest\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 96 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_acb0c13ded5ad341e55335e742e8f7bcf}\label{classdefals_1_1copy_move_detector_acb0c13ded5ad341e55335e742e8f7bcf}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+lines@{\+\_\+lines}}
+\index{\+\_\+lines@{\+\_\+lines}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+lines}{\_lines}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classdefals_1_1_line}{Line}$>$ defals\+::copy\+Move\+Detector\+::\+\_\+lines\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 99 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a4f87062f7eaeea1367e247e2115d776a}\label{classdefals_1_1copy_move_detector_a4f87062f7eaeea1367e247e2115d776a}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+mask@{\+\_\+mask}}
+\index{\+\_\+mask@{\+\_\+mask}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+mask}{\_mask}}
+{\footnotesize\ttfamily cv\+::\+Mat defals\+::copy\+Move\+Detector\+::\+\_\+mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 94 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a800b15d314ae7f5cfea5d2d055af2bb1}\label{classdefals_1_1copy_move_detector_a800b15d314ae7f5cfea5d2d055af2bb1}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+match\+Threshold@{\+\_\+match\+Threshold}}
+\index{\+\_\+match\+Threshold@{\+\_\+match\+Threshold}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+match\+Threshold}{\_matchThreshold}}
+{\footnotesize\ttfamily double defals\+::copy\+Move\+Detector\+::\+\_\+match\+Threshold\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 89 of file copy\+Move\+Detector.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1copy_move_detector_a22c5159e48cc839ebd7959fd43f228d9}\label{classdefals_1_1copy_move_detector_a22c5159e48cc839ebd7959fd43f228d9}} 
+\index{defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}!\+\_\+min\+Hessian@{\+\_\+min\+Hessian}}
+\index{\+\_\+min\+Hessian@{\+\_\+min\+Hessian}!defals\+::copy\+Move\+Detector@{defals\+::copy\+Move\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+min\+Hessian}{\_minHessian}}
+{\footnotesize\ttfamily int defals\+::copy\+Move\+Detector\+::\+\_\+min\+Hessian\hspace{0.3cm}{\ttfamily [private]}}
+
+Parameters for the algorithm. 
+
+Definition at line 88 of file copy\+Move\+Detector.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{copy_move_detector_8hpp}{copy\+Move\+Detector.\+hpp}\item 
+src/\hyperlink{copy_move_detector_8cpp}{copy\+Move\+Detector.\+cpp}\end{DoxyCompactItemize}

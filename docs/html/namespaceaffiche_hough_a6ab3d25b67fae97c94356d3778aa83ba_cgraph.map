@@ -1,0 +1,6 @@
+<map id="afficheHough.main" name="afficheHough.main">
+<area shape="rect" id="node2" href="$namespaceaffiche_hough.html#aee6613c62eeeb117afce83cfa389b0bb" title="afficheHough.filterClusters" alt="" coords="184,5,361,32"/>
+<area shape="rect" id="node3" href="$namespaceaffiche_hough.html#a65b7e65c7983fa86c52a80c7d51753d2" title="afficheHough.clustering" alt="" coords="193,56,352,83"/>
+<area shape="rect" id="node4" href="$namespaceaffiche_hough.html#acba18e06ffbebf2b6e72e3f766c4aa28" title="afficheHough.clusterGen" alt="" coords="409,56,576,83"/>
+<area shape="rect" id="node5" href="$namespaceaffiche_hough.html#afbc40185dea45de532fd4802d410c08e" title="afficheHough.proches" alt="" coords="624,56,773,83"/>
+</map>

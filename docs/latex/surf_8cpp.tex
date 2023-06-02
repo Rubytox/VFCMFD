@@ -1,0 +1,248 @@
+\hypertarget{surf_8cpp}{}\section{src/surf.cpp File Reference}
+\label{surf_8cpp}\index{src/surf.\+cpp@{src/surf.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/surf.\+hpp\char`\"{}}\newline
+Include dependency graph for surf.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{surf_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Mat \hyperlink{surf_8cpp_af417f81f63cc6449689811b54274fd2f}{surf\+\_\+analysis} (const Mat \&src, int min\+Hessian)
+\item 
+map$<$ double, int $>$ \hyperlink{surf_8cpp_adaf1a9ba10e56bdc469e9febbee28ee0}{similarity\+Vector} (const vector$<$ Key\+Point $>$ \&keypoints, const Mat \&descriptors, int i)
+\item 
+int \hyperlink{surf_8cpp_a3e59486ab764379b490e2073c0a9985f}{rand\+Range} (int a, int b)
+\item 
+Mat \hyperlink{surf_8cpp_a126446bf2707cdfb95504b79029c70e0}{transform\+And\+Draw} (const Mat \&img, vector$<$ Line $>$ lines, bool print=false)
+\item 
+Mat \hyperlink{surf_8cpp_a22cb312c1670b123a1c04c62a96096b7}{parallel\+Lines} (const Mat \&img)
+\item 
+Mat \hyperlink{surf_8cpp_a34f9cdd0baf2a79b70738bf861307b9a}{surf\+\_\+improved} (const Mat \&img, int min\+Hessian)
+\item 
+Mat \hyperlink{surf_8cpp_a0eb4617c214386ff74614ec9280d6c88}{surf\+\_\+matching} (const Mat \&img1, const Mat \&img2, int min\+Hessian)
+\item 
+bool \hyperlink{surf_8cpp_a0a038a0aaae7b2f3706b5e5f3ceda07b}{are\+Not\+Near} (const Point2f \&point1, const Point2f \&point2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements the fucntions defined in \hyperlink{surf_8hpp}{surf.\+hpp} 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{surf_8cpp_a0a038a0aaae7b2f3706b5e5f3ceda07b}\label{surf_8cpp_a0a038a0aaae7b2f3706b5e5f3ceda07b}} 
+\index{surf.\+cpp@{surf.\+cpp}!are\+Not\+Near@{are\+Not\+Near}}
+\index{are\+Not\+Near@{are\+Not\+Near}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{are\+Not\+Near()}{areNotNear()}}
+{\footnotesize\ttfamily bool are\+Not\+Near (\begin{DoxyParamCaption}\item[{const Point2f \&}]{point1,  }\item[{const Point2f \&}]{point2 }\end{DoxyParamCaption})}
+
+Helper function used in surf\+\_\+matching algorithm\+: it checks whether two points are near to each other. In this function, p1 is near to p2 if p1 is one of the eight neighbours of p2 or is equal to p2 \+:
+
+\begin{DoxyVerb}+-----+-----+-----+
+|  a  |  b  |  c  |
++-----+-----+-----+
+|  d  | p_2 |  e  |  p1 is near to p2 <==> p1 == p2 or p1 in [a, h]
++-----+-----+-----+
+|  f  |  g  |  h  |
++-----+-----+-----+
+\end{DoxyVerb}
+
+
+Note\+: this relation is symmetric.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & The first point. \\
+\hline
+{\em point2} & The second point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point1 is not near to point2, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file surf.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{surf_8cpp_a0a038a0aaae7b2f3706b5e5f3ceda07b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{surf_8cpp_a22cb312c1670b123a1c04c62a96096b7}\label{surf_8cpp_a22cb312c1670b123a1c04c62a96096b7}} 
+\index{surf.\+cpp@{surf.\+cpp}!parallel\+Lines@{parallel\+Lines}}
+\index{parallel\+Lines@{parallel\+Lines}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{parallel\+Lines()}{parallelLines()}}
+{\footnotesize\ttfamily Mat parallel\+Lines (\begin{DoxyParamCaption}\item[{const Mat \&}]{img }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file surf.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{surf_8cpp_a22cb312c1670b123a1c04c62a96096b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{surf_8cpp_a3e59486ab764379b490e2073c0a9985f}\label{surf_8cpp_a3e59486ab764379b490e2073c0a9985f}} 
+\index{surf.\+cpp@{surf.\+cpp}!rand\+Range@{rand\+Range}}
+\index{rand\+Range@{rand\+Range}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{rand\+Range()}{randRange()}}
+{\footnotesize\ttfamily int rand\+Range (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file surf.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{surf_8cpp_a3e59486ab764379b490e2073c0a9985f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{surf_8cpp_adaf1a9ba10e56bdc469e9febbee28ee0}\label{surf_8cpp_adaf1a9ba10e56bdc469e9febbee28ee0}} 
+\index{surf.\+cpp@{surf.\+cpp}!similarity\+Vector@{similarity\+Vector}}
+\index{similarity\+Vector@{similarity\+Vector}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{similarity\+Vector()}{similarityVector()}}
+{\footnotesize\ttfamily map$<$double, int$>$ similarity\+Vector (\begin{DoxyParamCaption}\item[{const vector$<$ Key\+Point $>$ \&}]{keypoints,  }\item[{const Mat \&}]{descriptors,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+Helper function that computes a similarity vector for a keypoint. Given $X = \{x_1, ..., x_n\}$ a set of keypoints and $F = \{f_1, ..., f_n\}$ their respective descriptors, and given an index $i \in [1, n]$, this function computes the following vector\+: $D = \{d_1, ..., d_{n-1}\}$ such as \+:
+\begin{DoxyItemize}
+\item $\forall j \in [1, n]\setminus\lbrace i\rbrace,\; d_j = ||f_i - f_j||_2$
+\item the coordinates of $D$ are sorted by ascending order
+\end{DoxyItemize}
+
+The code actually returns a map because as we need to sort the distances, we need to keep the correspondance between a computed distance and the matching descriptor. Thus, we return a map associating distances with the matching keypoint\textquotesingle{}s index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keypoints} & The list of keypoints. \\
+\hline
+{\em descriptors} & A matrix whose dimensions are len(keypoints) x 64 or len(keypoints) x 128. The i-\/th line of the matrix is the descriptor of the i-\/th keypoint in keypoints. \\
+\hline
+{\em i} & The index of the keypoint we want to compute a similarity vector for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map associating the euclidean distance between the i-\/th keypoint and all the other keypoints and the index of the other keypoint. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file surf.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{surf_8cpp_adaf1a9ba10e56bdc469e9febbee28ee0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{surf_8cpp_af417f81f63cc6449689811b54274fd2f}\label{surf_8cpp_af417f81f63cc6449689811b54274fd2f}} 
+\index{surf.\+cpp@{surf.\+cpp}!surf\+\_\+analysis@{surf\+\_\+analysis}}
+\index{surf\+\_\+analysis@{surf\+\_\+analysis}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{surf\+\_\+analysis()}{surf\_analysis()}}
+{\footnotesize\ttfamily Mat surf\+\_\+analysis (\begin{DoxyParamCaption}\item[{const Mat \&}]{src,  }\item[{int}]{min\+Hessian }\end{DoxyParamCaption})}
+
+This function only detects S\+U\+RF keypoints and draws them on the source image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & The source image. \\
+\hline
+{\em min\+Hessian} & The value of the Hessian threshold in the S\+U\+RF algorithm.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A matrix representing the source image with the S\+U\+RF keypoints drawn on it. 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file surf.\+cpp.
+
+\mbox{\Hypertarget{surf_8cpp_a34f9cdd0baf2a79b70738bf861307b9a}\label{surf_8cpp_a34f9cdd0baf2a79b70738bf861307b9a}} 
+\index{surf.\+cpp@{surf.\+cpp}!surf\+\_\+improved@{surf\+\_\+improved}}
+\index{surf\+\_\+improved@{surf\+\_\+improved}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{surf\+\_\+improved()}{surf\_improved()}}
+{\footnotesize\ttfamily Mat surf\+\_\+improved (\begin{DoxyParamCaption}\item[{const Mat \&}]{img,  }\item[{int}]{min\+Hessian }\end{DoxyParamCaption})}
+
+This function implements the algorithm presented in the paper\+: \char`\"{}\+A S\+I\+F\+T-\/\+Based Forensic Method for Copy–\+Move Attack Detection 
+ and Transformation Recovery\char`\"{}. It detects S\+U\+RF keypoints using the regular S\+U\+RF algorithm, but the matching process is customized in order to fit our needs \+: it is done on only one image instead of two.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The source image. \\
+\hline
+{\em min\+Hessian} & The value of the Hessian threshold in the S\+U\+RF algorithm.\\
+\hline
+{\em A} & matrix representing the source image, with matches between similar areas drawn. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file surf.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{surf_8cpp_a34f9cdd0baf2a79b70738bf861307b9a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{surf_8cpp_a0eb4617c214386ff74614ec9280d6c88}\label{surf_8cpp_a0eb4617c214386ff74614ec9280d6c88}} 
+\index{surf.\+cpp@{surf.\+cpp}!surf\+\_\+matching@{surf\+\_\+matching}}
+\index{surf\+\_\+matching@{surf\+\_\+matching}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{surf\+\_\+matching()}{surf\_matching()}}
+{\footnotesize\ttfamily Mat surf\+\_\+matching (\begin{DoxyParamCaption}\item[{const Mat \&}]{img1,  }\item[{const Mat \&}]{img2,  }\item[{int}]{min\+Hessian }\end{DoxyParamCaption})}
+
+This function detects S\+U\+RF keypoints on two images, and then computes the matching keypoints between both images.
+
+Note\+: This function should be used when img2 is part of img1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em img1} & The source image. \\
+\hline
+{\em img2} & An image usually extracted from img1. It can be applied transformations such as rotations, scaling... \\
+\hline
+{\em min\+Hessian} & The value of the Hessian threshold in the S\+U\+RF algorithm.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A matrix representing the two images side by side, with matches between the keypoints drawn. 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file surf.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{surf_8cpp_a0eb4617c214386ff74614ec9280d6c88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{surf_8cpp_a126446bf2707cdfb95504b79029c70e0}\label{surf_8cpp_a126446bf2707cdfb95504b79029c70e0}} 
+\index{surf.\+cpp@{surf.\+cpp}!transform\+And\+Draw@{transform\+And\+Draw}}
+\index{transform\+And\+Draw@{transform\+And\+Draw}!surf.\+cpp@{surf.\+cpp}}
+\subsubsection{\texorpdfstring{transform\+And\+Draw()}{transformAndDraw()}}
+{\footnotesize\ttfamily Mat transform\+And\+Draw (\begin{DoxyParamCaption}\item[{const Mat \&}]{img,  }\item[{vector$<$ Line $>$}]{lines,  }\item[{bool}]{print = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file surf.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{surf_8cpp_a126446bf2707cdfb95504b79029c70e0_icgraph}
+\end{center}
+\end{figure}

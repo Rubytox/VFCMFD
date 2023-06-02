@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['prise_20en_20main_20de_20surf',['Prise en main de SURF',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['parallellines',['parallelLines',['../surf_8hpp.html#a98ca75d61f1f3338ffea3b7a639649d5',1,'parallelLines(const cv::Mat &amp;img):&#160;surf.hpp'],['../surf_8cpp.html#a22cb312c1670b123a1c04c62a96096b7',1,'parallelLines(const Mat &amp;img):&#160;surf.cpp']]],
+  ['pente',['pente',['../classdefals_1_1_line.html#ab8aafcf0f1dc98dcd8193a92c169500b',1,'defals::Line']]],
+  ['platform_5fid',['PLATFORM_ID',['../build_2_c_make_files_23_810_82_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../build_2_c_make_files_23_810_82_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp'],['../cmake-build-debug_2_c_make_files_23_816_85_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../cmake-build-debug_2_c_make_files_23_816_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]],
+  ['plot3d',['plot3D',['../namespaceplot3_d.html',1,'']]],
+  ['plot3d_2epy',['plot3D.py',['../plot3_d_8py.html',1,'']]],
+  ['plotroc',['plotROC',['../namespaceplot_r_o_c.html',1,'']]],
+  ['plotroc_2epy',['plotROC.py',['../plot_r_o_c_8py.html',1,'']]],
+  ['plotscores',['plotScores',['../namespaceplot_scores.html',1,'']]],
+  ['plotscores_2epy',['plotScores.py',['../plot_scores_8py.html',1,'']]],
+  ['plotscores3d',['plotScores3D',['../namespaceplot_scores3_d.html',1,'']]],
+  ['plotscores3d_2epy',['plotScores3D.py',['../plot_scores3_d_8py.html',1,'']]],
+  ['pointfrom4d',['pointFrom4D',['../copy_move_detector_8cpp.html#a47f0575bc7055303778ca4e36aa65856',1,'copyMoveDetector.cpp']]],
+  ['printcartes',['printCartes',['../classdefals_1_1_line.html#a56673f0353400060779c6f3b994f110e',1,'defals::Line']]],
+  ['printclusters',['printClusters',['../classdefals_1_1copy_move_detector.html#a397e6715d0a274c67ed81735da36329f',1,'defals::copyMoveDetector']]],
+  ['printinfo',['printInfo',['../classdefals_1_1copy_move_detector.html#a9fd2ba369ce7ab6fb7f5a7b9c23f4eae',1,'defals::copyMoveDetector']]],
+  ['printkeypoint',['printKeypoint',['../classdefals_1_1_interest_point.html#af99319f9c5cd2126719d1ec804572a3f',1,'defals::InterestPoint']]],
+  ['printlines',['printLines',['../classdefals_1_1copy_move_detector.html#a1dda27b106215ae248c5083536a2c001',1,'defals::copyMoveDetector']]],
+  ['printpolar',['printPolar',['../classdefals_1_1_line.html#af77fba109ba0f85eca871478f2a9fe28',1,'defals::Line']]],
+  ['printpolar3d',['printPolar3D',['../classdefals_1_1_line.html#a0ca052b53e5b2c21003ff7422fa23064',1,'defals::Line']]],
+  ['proche',['proche',['../classdefals_1_1_line.html#a99488154d6dc7781097fdd1e71546395',1,'defals::Line']]],
+  ['proches',['proches',['../namespaceaffiche_hough.html#afbc40185dea45de532fd4802d410c08e',1,'afficheHough']]],
+  ['prolonger',['prolonger',['../classdefals_1_1_line.html#a5807943405bdaadfea9b35eeb63fdd46',1,'defals::Line']]],
+  ['pt',['pt',['../classdefals_1_1_interest_points.html#ab9c31f421438b096df5447d6ce1b02f4',1,'defals::InterestPoints']]]
+];

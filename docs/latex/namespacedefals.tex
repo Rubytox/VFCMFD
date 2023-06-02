@@ -1,0 +1,224 @@
+\hypertarget{namespacedefals}{}\section{defals Namespace Reference}
+\label{namespacedefals}\index{defals@{defals}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdefals_1_1_clustered_line}{Clustered\+Line}
+\item 
+class \hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector}
+\item 
+class \hyperlink{classdefals_1_1_interest_point}{Interest\+Point}
+\item 
+class \hyperlink{classdefals_1_1_interest_points}{Interest\+Points}
+\item 
+class \hyperlink{classdefals_1_1_line}{Line}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{namespacedefals_a93b34e2e4f989ac1ebef9f660cf3a303}{Cluster} = std\+::vector$<$ \hyperlink{classdefals_1_1_line}{Line} $>$
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacedefals_a3c45e4d818c6b54d5df0e9aa914c8266}{run\+Matches} (\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&detector, int start, int end)
+\item 
+void \hyperlink{namespacedefals_aec8e056bd901239f1b5fe64dd0a1645f}{run\+Better\+Matches} (\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&detector, int start, int end)
+\item 
+bool \hyperlink{namespacedefals_a6dcf52529b875f27e22b256402e7674f}{operator$<$} (const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&pt1, const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&pt2)
+\item 
+bool \hyperlink{namespacedefals_a494f95c79cc46c5c71655a0de4b865f1}{operator==} (const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&pt1, const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&pt2)
+\item 
+bool \hyperlink{namespacedefals_a4c55b460a9efaca04446cfddd1c947f6}{operator==} (const \hyperlink{classdefals_1_1_line}{Line} \&first, const \hyperlink{classdefals_1_1_line}{Line} \&second)
+\item 
+bool \hyperlink{namespacedefals_a56782f10ddcb64e96fb17b2ee89fe6c3}{operator!=} (const \hyperlink{classdefals_1_1_line}{Line} \&first, const \hyperlink{classdefals_1_1_line}{Line} \&second)
+\item 
+std\+::ostream \& \hyperlink{namespacedefals_a41fe3a74a9f03aa762cd1723284947f8}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classdefals_1_1_line}{Line} \&line)
+\item 
+cv\+::\+Mat \hyperlink{namespacedefals_a9b63764779b202012956ad5bb5d24442}{full\+Plane} (const cv\+::\+Mat \&src, std\+::vector$<$ \hyperlink{classdefals_1_1_line}{Line} $>$ \&lines, int thickness=3)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacedefals_a93b34e2e4f989ac1ebef9f660cf3a303}\label{namespacedefals_a93b34e2e4f989ac1ebef9f660cf3a303}} 
+\index{defals@{defals}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!defals@{defals}}
+\subsubsection{\texorpdfstring{Cluster}{Cluster}}
+{\footnotesize\ttfamily using \hyperlink{namespacedefals_a93b34e2e4f989ac1ebef9f660cf3a303}{defals\+::\+Cluster} = typedef std\+::vector$<$\hyperlink{classdefals_1_1_line}{Line}$>$}
+
+This will help understand the code better. 
+
+Definition at line 28 of file copy\+Move\+Detector.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacedefals_a9b63764779b202012956ad5bb5d24442}\label{namespacedefals_a9b63764779b202012956ad5bb5d24442}} 
+\index{defals@{defals}!full\+Plane@{full\+Plane}}
+\index{full\+Plane@{full\+Plane}!defals@{defals}}
+\subsubsection{\texorpdfstring{full\+Plane()}{fullPlane()}}
+{\footnotesize\ttfamily cv\+::\+Mat defals\+::full\+Plane (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{src,  }\item[{std\+::vector$<$ \hyperlink{classdefals_1_1_line}{Line} $>$ \&}]{lines,  }\item[{int}]{thickness = {\ttfamily 3} }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{namespacedefals_a9b63764779b202012956ad5bb5d24442_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedefals_a56782f10ddcb64e96fb17b2ee89fe6c3}\label{namespacedefals_a56782f10ddcb64e96fb17b2ee89fe6c3}} 
+\index{defals@{defals}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!defals@{defals}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool defals\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{first,  }\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 128 of file line.\+hpp.
+
+\mbox{\Hypertarget{namespacedefals_a6dcf52529b875f27e22b256402e7674f}\label{namespacedefals_a6dcf52529b875f27e22b256402e7674f}} 
+\index{defals@{defals}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!defals@{defals}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool defals\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{pt1,  }\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{pt2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Basically, an \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} is lower than another one if its angle is lower.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt1} & The first point. \\
+\hline
+{\em pt2} & The second point.\\
+\hline
+\end{DoxyParams}
+i\begin{DoxyReturn}{Returns}
+True if pt1 $<$ pt2, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Interest\+Point.\+hpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{namespacedefals_a6dcf52529b875f27e22b256402e7674f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedefals_a41fe3a74a9f03aa762cd1723284947f8}\label{namespacedefals_a41fe3a74a9f03aa762cd1723284947f8}} 
+\index{defals@{defals}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!defals@{defals}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& defals\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 133 of file line.\+hpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedefals_a41fe3a74a9f03aa762cd1723284947f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedefals_a494f95c79cc46c5c71655a0de4b865f1}\label{namespacedefals_a494f95c79cc46c5c71655a0de4b865f1}} 
+\index{defals@{defals}!operator==@{operator==}}
+\index{operator==@{operator==}!defals@{defals}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool defals\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{pt1,  }\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{pt2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Two \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} are equal if, and only if, they have the same orientation and the same descriptor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt1} & The first point. \\
+\hline
+{\em pt2} & The second point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pt1 == pt2, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file Interest\+Point.\+hpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacedefals_a494f95c79cc46c5c71655a0de4b865f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedefals_a4c55b460a9efaca04446cfddd1c947f6}\label{namespacedefals_a4c55b460a9efaca04446cfddd1c947f6}} 
+\index{defals@{defals}!operator==@{operator==}}
+\index{operator==@{operator==}!defals@{defals}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool defals\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{first,  }\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 124 of file line.\+hpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{namespacedefals_a4c55b460a9efaca04446cfddd1c947f6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedefals_aec8e056bd901239f1b5fe64dd0a1645f}\label{namespacedefals_aec8e056bd901239f1b5fe64dd0a1645f}} 
+\index{defals@{defals}!run\+Better\+Matches@{run\+Better\+Matches}}
+\index{run\+Better\+Matches@{run\+Better\+Matches}!defals@{defals}}
+\subsubsection{\texorpdfstring{run\+Better\+Matches()}{runBetterMatches()}}
+{\footnotesize\ttfamily void defals\+::run\+Better\+Matches (\begin{DoxyParamCaption}\item[{\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&}]{detector,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Definition at line 381 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedefals_aec8e056bd901239f1b5fe64dd0a1645f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedefals_aec8e056bd901239f1b5fe64dd0a1645f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedefals_a3c45e4d818c6b54d5df0e9aa914c8266}\label{namespacedefals_a3c45e4d818c6b54d5df0e9aa914c8266}} 
+\index{defals@{defals}!run\+Matches@{run\+Matches}}
+\index{run\+Matches@{run\+Matches}!defals@{defals}}
+\subsubsection{\texorpdfstring{run\+Matches()}{runMatches()}}
+{\footnotesize\ttfamily void defals\+::run\+Matches (\begin{DoxyParamCaption}\item[{\hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector} \&}]{detector,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+This function is a friend of \hyperlink{classdefals_1_1copy_move_detector}{copy\+Move\+Detector}. It isn\textquotesingle{}t part of the class because it is going to be called by a thread and a thread can\textquotesingle{}t call a member function.
+
+It computes all matches for keypoints in range \mbox{[}start, end\mbox{[}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em detector} & The detector we want to compute a match. \\
+\hline
+{\em start} & The start index. \\
+\hline
+{\em end} & The end index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 370 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{namespacedefals_a3c45e4d818c6b54d5df0e9aa914c8266_cgraph}
+\end{center}
+\end{figure}

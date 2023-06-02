@@ -1,0 +1,232 @@
+.TH "defals::InterestPoint" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defals::InterestPoint
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <InterestPoint\&.hpp>\fP
+.PP
+Inherits KeyPoint\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInterestPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBInterestPoint\fP (const cv::KeyPoint &keypoint, const cv::Mat &descriptor)"
+.br
+.ti -1c
+.RI "\fBInterestPoint\fP (const cv::Point2f &point)"
+.br
+.ti -1c
+.RI "const cv::Mat & \fBgetDescriptor\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetAngleIdx\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAngleIdx\fP (int angleIdx)"
+.br
+.ti -1c
+.RI "int \fBgetNormIdx\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNormIdx\fP (int normIdx)"
+.br
+.ti -1c
+.RI "bool \fBdescriptorEquals\fP (const \fBInterestPoint\fP &other) const"
+.br
+.ti -1c
+.RI "bool \fBdescriptorLower\fP (const \fBInterestPoint\fP &other) const"
+.br
+.ti -1c
+.RI "bool \fBangleEquals\fP (const \fBInterestPoint\fP &other) const"
+.br
+.ti -1c
+.RI "bool \fBangleLower\fP (const \fBInterestPoint\fP &other) const"
+.br
+.ti -1c
+.RI "std::string \fBprintKeypoint\fP () const"
+.br
+.ti -1c
+.RI "template<class T  = float> std::string \fBformatDescriptor\fP () const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "cv::Mat \fB_descriptor\fP"
+.br
+.ti -1c
+.RI "int \fB_angleIdx\fP"
+.br
+.ti -1c
+.RI "int \fB_normIdx\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class acts like a wrapper for cv::KeyPoint\&. It associated a KeyPoint with its descriptor instead of having to find it as a row of a matrix\&.
+.PP
+The matching algorithm needs to consider two lists of \fBInterestPoint\fP:
+.IP "\(bu" 2
+one ordered by the keypoint's angle ;
+.IP "\(bu" 2
+the other ordered by the keypoint's descriptor's norm\&. However, we need to be able to find efficiently where is one keypoint in both lists\&. To do so, we provide an \fBInterestPoint\fP with two attributes standing for their index in both lists\&. 
+.PP
+
+.PP
+Definition at line 19 of file InterestPoint\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "InterestPoint::InterestPoint ()"
+Constructs an \fBInterestPoint\fP from a KeyPoint\&. The angle and norm indices are set to -1 because they don't belong to any of the two vectors yet\&. 
+.PP
+Definition at line 12 of file InterestPoint\&.cpp\&.
+.SS "defals::InterestPoint::InterestPoint (const cv::KeyPoint & keypoint, const cv::Mat & descriptor)"
+
+.SS "defals::InterestPoint::InterestPoint (const cv::Point2f & point)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool InterestPoint::angleEquals (const \fBInterestPoint\fP & other) const"
+Equals condition in terms of angles\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP Another \fBInterestPoint\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if \fIthis\fP and \fIother\fP have the same orientation, false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file InterestPoint\&.cpp\&.
+.SS "bool InterestPoint::angleLower (const \fBInterestPoint\fP & other) const"
+Lower condition in terms of angles\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP Another \fBInterestPoint\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if \fIthis\fP is lower in angle than \fIother\fP i\&.e\&. the difference of their angles is negative\&. 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file InterestPoint\&.cpp\&.
+.SS "bool InterestPoint::descriptorEquals (const \fBInterestPoint\fP & other) const"
+Equality condition in terms of descriptors' distance\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP Another \fBInterestPoint\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if \fIthis\fP is equal to \fIother\fP i\&.e\&. their descriptors' euclidean distance is zero\&. 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file InterestPoint\&.cpp\&.
+.SS "bool InterestPoint::descriptorLower (const \fBInterestPoint\fP & other) const"
+Lower condition in terms of descriptors' norms\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP Another \fBInterestPoint\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if \fIthis\fP is lower in norm than \fIother\fP i\&.e\&. the difference of the norms of their respective descriptors is negative\&. 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file InterestPoint\&.cpp\&.
+.SS "template<class T  = float> std::string defals::InterestPoint::formatDescriptor () const\fC [inline]\fP"
+This method is not defined in the source file because it's a template\&. It just prints nicely the descriptor of the considered keypoint\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP Matrix data type\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string representing the descriptor in the accurate type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file InterestPoint\&.hpp\&.
+.SS "int InterestPoint::getAngleIdx () const"
+
+.PP
+Definition at line 101 of file InterestPoint\&.cpp\&.
+.SS "const cv::Mat & InterestPoint::getDescriptor () const"
+Getter for __descriptor_\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The keypoint's descriptor\&. 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file InterestPoint\&.cpp\&.
+.SS "int InterestPoint::getNormIdx () const"
+
+.PP
+Definition at line 109 of file InterestPoint\&.cpp\&.
+.SS "std::string InterestPoint::printKeypoint () const"
+Prints keypoint in format (x, y)\&.
+.PP
+\fBReturns:\fP
+.RS 4
+A string formatted as (x, y)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file InterestPoint\&.cpp\&.
+.SS "void InterestPoint::setAngleIdx (int angleIdx)"
+
+.PP
+Definition at line 105 of file InterestPoint\&.cpp\&.
+.SS "void InterestPoint::setNormIdx (int normIdx)"
+
+.PP
+Definition at line 113 of file InterestPoint\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int defals::InterestPoint::_angleIdx\fC [private]\fP"
+The index of the keypoint in the angle-sorted list 
+.PP
+Definition at line 96 of file InterestPoint\&.hpp\&.
+.SS "cv::Mat defals::InterestPoint::_descriptor\fC [private]\fP"
+A 1x64 or 1x128 vector standing for the descriptor of the keypoint 
+.PP
+Definition at line 93 of file InterestPoint\&.hpp\&.
+.SS "int defals::InterestPoint::_normIdx\fC [private]\fP"
+The index of the keypoint in the norm-sorted list 
+.PP
+Definition at line 98 of file InterestPoint\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

@@ -1,0 +1,352 @@
+.TH "defals::copyMoveDetector" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defals::copyMoveDetector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <copyMoveDetector\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcopyMoveDetector\fP (const std::string &filename, const std::string &masqueName='', int minHessian=300, double matchesThreshold=0\&.5)"
+.br
+.ti -1c
+.RI "void \fBdetect\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintLines\fP () const"
+.br
+.ti -1c
+.RI "void \fBprintClusters\fP () const"
+.br
+.ti -1c
+.RI "void \fBprintInfo\fP () const"
+.br
+.ti -1c
+.RI "void \fBmakeArff\fP (const std::string &filename) const"
+.br
+.ti -1c
+.RI "void \fBshow\fP (const std::string &filename='lines', const bool keypoints=true, const bool lines=true, const bool clusters=true, const bool hulls=true, const std::string &masqueName='', const bool mask=false) const"
+.br
+.ti -1c
+.RI "void \fBrandomLines\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcomputeKeypoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeMatches\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeMatch\fP (int i)"
+.br
+.ti -1c
+.RI "void \fBcomputeBetterMatches\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeBetterMatch\fP (int i)"
+.br
+.ti -1c
+.RI "void \fBcomputeLines\fP (double minLength=30)"
+.br
+.ti -1c
+.RI "void \fBarrangeLines\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeClusters\fP (int threshold=10)"
+.br
+.ti -1c
+.RI "void \fBcomputeHull\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeMask\fP (int kernelSize=3)"
+.br
+.ti -1c
+.RI "void \fBcomputeAllScores\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeScores\fP (double &sensitivity, double &specificity) const"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsave\fP (const cv::Mat &img, const std::string &filename='lines')"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_minHessian\fP"
+.br
+.ti -1c
+.RI "double \fB_matchThreshold\fP"
+.br
+.ti -1c
+.RI "std::string \fB_filename\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fB_image\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fB_mask\fP"
+.br
+.ti -1c
+.RI "\fBInterestPoints\fP \fB_interestPoints\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBInterestPoint\fP > > \fB_allMatches\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBLine\fP > \fB_lines\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBCluster\fP > \fB_clusters\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< cv::Point > > \fB_hulls\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fB_computedMask\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "void \fBrunMatches\fP (\fBcopyMoveDetector\fP &detector, int start, int end)"
+.br
+.ti -1c
+.RI "void \fBrunBetterMatches\fP (\fBcopyMoveDetector\fP &detector, int start, int end)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class represents a copy/move forgery detector\&. It provided the user with one main function \fIdetect\fP which processes the image, and a function \fIshow\fP which displays and saves the processed image\&. 
+.PP
+Definition at line 36 of file copyMoveDetector\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "copyMoveDetector::copyMoveDetector (const std::string & filename, const std::string & masqueName = \fC''\fP, int minHessian = \fC300\fP, double matchesThreshold = \fC0\&.5\fP)"
+Creates a copy/move forgery detector object\&. We pass the hessian and matches threshold here\&.
+.PP
+TODO: - minHessian might be computed depending on image size or characteristics\&. For instance, we could compute the keypoints (this is fast usually), then with some statistics check whether we have enough keypoints\&.
+.IP "\(bu" 2
+matchesThreshold should be a constant as specified in the research paper\&. We need to check though whether 0\&.5 is a good enough value\&.
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP The name of the image file\&. 
+.br
+\fIminHessian\fP The threshold value of Det(Hessian)\&. 
+.br
+\fImatchesThreshold\fP The maximum ratio for two consecutives distances in matching algorithm\&. 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file copyMoveDetector\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void copyMoveDetector::arrangeLines ()\fC [private]\fP"
+This function inverts all the lines that don't respect the condition: start < end with < in lexicographical order (origin up left)\&. 
+.PP
+Definition at line 552 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeAllScores ()\fC [private]\fP"
+
+.PP
+Definition at line 682 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeBetterMatch (int i)\fC [private]\fP"
+
+.PP
+Definition at line 403 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeBetterMatches ()\fC [private]\fP"
+
+.PP
+Definition at line 504 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeClusters (int threshold = \fC10\fP)\fC [private]\fP"
+This function computes all clusters using \fBDBSCAN\fP algorithm\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIthreshold\fP Minimal number of lines in a cluster\&. 
+.RE
+.PP
+
+.PP
+Definition at line 573 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeHull ()\fC [private]\fP"
+
+.PP
+Definition at line 604 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeKeypoints ()\fC [private]\fP"
+This function applies the SURF algorithm in order to find keypoints for the image\&. 
+.PP
+Definition at line 294 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeLines (double minLength = \fC30\fP)\fC [private]\fP"
+This function creates all the lines by associating each keypoint to its matched keypoints\&. It doesn't add the lines whose length is shorter than \fIminLength\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIminLength\fP Minimum length required for accepting a line\&. 
+.RE
+.PP
+
+.PP
+Definition at line 535 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeMask (int kernelSize = \fC3\fP)\fC [private]\fP"
+
+.PP
+Definition at line 620 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeMatch (int i)\fC [private]\fP"
+This function computes matches for a specific keypoint\&. It calls \fIsimilarityVector\fP in order to compute the similarity vector for keypoint \fIi\fP then adds to allMatches the matched keypoints\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP The index of the source keypoint in _keypoints\&. 
+.RE
+.PP
+
+.PP
+Definition at line 319 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeMatches ()\fC [private]\fP"
+This function splits the keypoints indexes in descriptorEquals parts for each thread\&. Then it creates a thread and makes it process its own slice of keypoints\&. It waits for all threads to finish running before exiting\&. 
+.PP
+Definition at line 484 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::computeScores (double & sensitivity, double & specificity) const\fC [private]\fP"
+This function uses _mask and _computedMask 
+.PP
+Definition at line 641 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::detect ()"
+This function runs all the detecting process by :
+.IP "\(bu" 2
+computing keypoints in the image
+.IP "\(bu" 2
+computing all matches between keypoints
+.IP "\(bu" 2
+creating all the lines from the matches
+.IP "\(bu" 2
+sorting the lines in clusters
+.IP "\(bu" 2
+arranging clusters in order to have all the lines in the same direction 
+.PP
+
+.PP
+Definition at line 60 of file copyMoveDetector\&.cpp\&.
+.SS "void defals::copyMoveDetector::makeArff (const std::string & filename) const"
+
+.SS "void copyMoveDetector::printClusters () const"
+This function prints all the clusters in noCluster,rho,theta,length format\&. This may be useful for further processing\&. 
+.PP
+Definition at line 113 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::printInfo () const"
+
+.PP
+Definition at line 129 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::printLines () const"
+This function prints all the lines in rho,theta,length format\&. This may be useful for further processing\&. 
+.PP
+Definition at line 102 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::randomLines ()"
+
+.PP
+Definition at line 801 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::save (const cv::Mat & img, const std::string & filename = \fC'lines'\fP)\fC [static]\fP, \fC [private]\fP"
+This function is called by \fIshow(const string&, const bool, const bool, const bool)\fP\&. It resizes the canvas in which the clusters have been drawn and displays it to the user\&.
+.PP
+If the user presses 's' key, the not resized canvas is saved to \fIfilename\fP\&. The function exists if the user presses any key\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimg\fP The canvas to display\&. 
+.br
+\fIfilename\fP The filename to save the canvas\&. 
+.RE
+.PP
+
+.PP
+Definition at line 285 of file copyMoveDetector\&.cpp\&.
+.SS "void copyMoveDetector::show (const std::string & filename = \fC'lines'\fP, const bool keypoints = \fCtrue\fP, const bool lines = \fCtrue\fP, const bool clusters = \fCtrue\fP, const bool hulls = \fCtrue\fP, const std::string & masqueName = \fC''\fP, const bool mask = \fCfalse\fP) const"
+Draws all the clusters on a copy of the image, and allows the user to save it to \fIfilename\fP by pressing 's'\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Destination filename if the image is saved\&. 
+.br
+\fIkeypoints\fP If set to true, keypoints are drawn on the canvas\&. 
+.br
+\fIlines\fP If set to true, lines are drawn on the canvas\&. 
+.br
+\fIclusters\fP If set to true, clusters are drawn on the canvas\&. 
+.RE
+.PP
+
+.PP
+Definition at line 194 of file copyMoveDetector\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "void runBetterMatches (\fBcopyMoveDetector\fP & detector, int start, int end)\fC [friend]\fP"
+
+.SS "void runMatches (\fBcopyMoveDetector\fP & detector, int start, int end)\fC [friend]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::vector<\fBInterestPoint\fP> > defals::copyMoveDetector::_allMatches\fC [private]\fP"
+
+.PP
+Definition at line 98 of file copyMoveDetector\&.hpp\&.
+.SS "std::vector<\fBCluster\fP> defals::copyMoveDetector::_clusters\fC [private]\fP"
+
+.PP
+Definition at line 101 of file copyMoveDetector\&.hpp\&.
+.SS "cv::Mat defals::copyMoveDetector::_computedMask\fC [private]\fP"
+
+.PP
+Definition at line 104 of file copyMoveDetector\&.hpp\&.
+.SS "std::string defals::copyMoveDetector::_filename\fC [private]\fP"
+
+.PP
+Definition at line 91 of file copyMoveDetector\&.hpp\&.
+.SS "std::vector<std::vector<cv::Point> > defals::copyMoveDetector::_hulls\fC [private]\fP"
+
+.PP
+Definition at line 103 of file copyMoveDetector\&.hpp\&.
+.SS "cv::Mat defals::copyMoveDetector::_image\fC [private]\fP"
+
+.PP
+Definition at line 93 of file copyMoveDetector\&.hpp\&.
+.SS "\fBInterestPoints\fP defals::copyMoveDetector::_interestPoints\fC [private]\fP"
+
+.PP
+Definition at line 96 of file copyMoveDetector\&.hpp\&.
+.SS "std::vector<\fBLine\fP> defals::copyMoveDetector::_lines\fC [private]\fP"
+
+.PP
+Definition at line 99 of file copyMoveDetector\&.hpp\&.
+.SS "cv::Mat defals::copyMoveDetector::_mask\fC [private]\fP"
+
+.PP
+Definition at line 94 of file copyMoveDetector\&.hpp\&.
+.SS "double defals::copyMoveDetector::_matchThreshold\fC [private]\fP"
+
+.PP
+Definition at line 89 of file copyMoveDetector\&.hpp\&.
+.SS "int defals::copyMoveDetector::_minHessian\fC [private]\fP"
+Parameters for the algorithm\&. 
+.PP
+Definition at line 88 of file copyMoveDetector\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

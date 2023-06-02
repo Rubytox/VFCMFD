@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Annotation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <image>
+        <Projet>DEFALS</Projet>
+        <Filename>01408.jpeg</Filename>
+        <Format>JPEG</Format>
+        <Nbofman>0</Nbofman>
+        <Nboffal>1</Nboffal>
+        <Diffusion>oui</Diffusion>
+        <Licence>Usage DGA</Licence>
+        <Origine>XP SIOC</Origine>
+    </image>
+    <option>
+        <IMAGE_CONTEXTE>interieur</IMAGE_CONTEXTE>
+        <IMAGE_DESCRIPTION_1>environnement</IMAGE_DESCRIPTION_1>
+        <IMAGE_DESCRIPTION_2 />
+        <IMAGE_QUALITE>100</IMAGE_QUALITE>
+        <IMAGE_LARGEUR>3168</IMAGE_LARGEUR>
+        <IMAGE_HAUTEUR>4752</IMAGE_HAUTEUR>
+        <IMAGE_NOM_ORIGINAL_1>01408.CR2</IMAGE_NOM_ORIGINAL_1>
+        <IMAGE_NOM_ORIGINAL_2 />
+        <LOGICIEL_ALTERATION>Photoshop</LOGICIEL_ALTERATION>
+        <CAPTEUR_NOM>Canon500D</CAPTEUR_NOM>
+        <CAPTEUR_MARQUE>Canon</CAPTEUR_MARQUE>
+        <CAPTEUR_TYPE>Reflex</CAPTEUR_TYPE>
+    </option>
+    <falsification>
+        <Id>0</Id>
+        <Nature>remplacement</Nature>
+        <Comment />
+    </falsification>
+</Annotation>

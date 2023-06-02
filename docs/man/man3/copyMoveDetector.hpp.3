@@ -1,0 +1,75 @@
+.TH "include/copyMoveDetector.hpp" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/copyMoveDetector.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <random>\fP
+.br
+\fC#include <thread>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <regex>\fP
+.br
+\fC#include <opencv2/opencv\&.hpp>\fP
+.br
+\fC#include <opencv2/features2d\&.hpp>\fP
+.br
+\fC#include <opencv2/xfeatures2d/nonfree\&.hpp>\fP
+.br
+\fC#include <boost/log/trivial\&.hpp>\fP
+.br
+\fC#include 'line\&.hpp'\fP
+.br
+\fC#include 'InterestPoint\&.hpp'\fP
+.br
+\fC#include 'InterestPoints\&.hpp'\fP
+.br
+\fC#include 'dbscan\&.hpp'\fP
+.br
+\fC#include 'ClusteredLine\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBdefals::copyMoveDetector\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBdefals\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBdefals::Cluster\fP = std::vector< Line >"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdefals::runMatches\fP (\fBcopyMoveDetector\fP &detector, int start, int end)"
+.br
+.ti -1c
+.RI "void \fBdefals::runBetterMatches\fP (\fBcopyMoveDetector\fP &detector, int start, int end)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

@@ -1,0 +1,357 @@
+\hypertarget{classdefals_1_1_interest_point}{}\section{defals\+:\+:Interest\+Point Class Reference}
+\label{classdefals_1_1_interest_point}\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+
+
+{\ttfamily \#include $<$Interest\+Point.\+hpp$>$}
+
+
+
+Inheritance diagram for defals\+:\+:Interest\+Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classdefals_1_1_interest_point__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for defals\+:\+:Interest\+Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classdefals_1_1_interest_point__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefals_1_1_interest_point_a1b6bd2869b17262d6ff88ce9af43d9fd}{Interest\+Point} ()
+\item 
+\hyperlink{classdefals_1_1_interest_point_a04ef8003424a0d0a122ba8ec1d1bd8b6}{Interest\+Point} (const cv\+::\+Key\+Point \&keypoint, const cv\+::\+Mat \&descriptor)
+\item 
+\hyperlink{classdefals_1_1_interest_point_a0c56edbec7b284702d2c8f9fc2aa55f4}{Interest\+Point} (const cv\+::\+Point2f \&point)
+\item 
+const cv\+::\+Mat \& \hyperlink{classdefals_1_1_interest_point_a1defbefa0bceea4052200c4348e4ef52}{get\+Descriptor} () const
+\item 
+int \hyperlink{classdefals_1_1_interest_point_a63862b65c659caa8f2098bdbf06c2b7c}{get\+Angle\+Idx} () const
+\item 
+void \hyperlink{classdefals_1_1_interest_point_a8fa7d8032a91b91a85eafefd2f46988e}{set\+Angle\+Idx} (int angle\+Idx)
+\item 
+int \hyperlink{classdefals_1_1_interest_point_a66e0a2140102e33905d198041602396b}{get\+Norm\+Idx} () const
+\item 
+void \hyperlink{classdefals_1_1_interest_point_ab8d314ee9fd1482bf8705ad6615e06a0}{set\+Norm\+Idx} (int norm\+Idx)
+\item 
+bool \hyperlink{classdefals_1_1_interest_point_ad479527a3ec0d7f765f949d6b41c10a6}{descriptor\+Equals} (const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&other) const
+\item 
+bool \hyperlink{classdefals_1_1_interest_point_aba9dc4741dd4631df0d1e7567eea9bc4}{descriptor\+Lower} (const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&other) const
+\item 
+bool \hyperlink{classdefals_1_1_interest_point_ab9b4ce92e93ed5e946e94d38a328c15b}{angle\+Equals} (const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&other) const
+\item 
+bool \hyperlink{classdefals_1_1_interest_point_ac90c377bd678447a7dac9f0c17765976}{angle\+Lower} (const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&other) const
+\item 
+std\+::string \hyperlink{classdefals_1_1_interest_point_af99319f9c5cd2126719d1ec804572a3f}{print\+Keypoint} () const
+\item 
+{\footnotesize template$<$class T  = float$>$ }\\std\+::string \hyperlink{classdefals_1_1_interest_point_a47d55468ef29a100ed6c118e5bf21ae8}{format\+Descriptor} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Mat \hyperlink{classdefals_1_1_interest_point_aaa341f5d37a05dcf8f53124a07274497}{\+\_\+descriptor}
+\item 
+int \hyperlink{classdefals_1_1_interest_point_a635589d58f12cab7408e4068f6cf5828}{\+\_\+angle\+Idx}
+\item 
+int \hyperlink{classdefals_1_1_interest_point_a8e6671d9215b3a767479ec6e11bdb1d2}{\+\_\+norm\+Idx}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class acts like a wrapper for cv\+::\+Key\+Point. It associated a Key\+Point with its descriptor instead of having to find it as a row of a matrix.
+
+The matching algorithm needs to consider two lists of \hyperlink{classdefals_1_1_interest_point}{Interest\+Point}\+:
+\begin{DoxyItemize}
+\item one ordered by the keypoint\textquotesingle{}s angle ;
+\item the other ordered by the keypoint\textquotesingle{}s descriptor\textquotesingle{}s norm. However, we need to be able to find efficiently where is one keypoint in both lists. To do so, we provide an \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} with two attributes standing for their index in both lists. 
+\end{DoxyItemize}
+
+Definition at line 19 of file Interest\+Point.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a1b6bd2869b17262d6ff88ce9af43d9fd}\label{classdefals_1_1_interest_point_a1b6bd2869b17262d6ff88ce9af43d9fd}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!Interest\+Point@{Interest\+Point}}
+\index{Interest\+Point@{Interest\+Point}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{Interest\+Point()}{InterestPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Interest\+Point\+::\+Interest\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} from a Key\+Point. The angle and norm indices are set to -\/1 because they don\textquotesingle{}t belong to any of the two vectors yet. 
+
+Definition at line 12 of file Interest\+Point.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a04ef8003424a0d0a122ba8ec1d1bd8b6}\label{classdefals_1_1_interest_point_a04ef8003424a0d0a122ba8ec1d1bd8b6}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!Interest\+Point@{Interest\+Point}}
+\index{Interest\+Point@{Interest\+Point}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{Interest\+Point()}{InterestPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily defals\+::\+Interest\+Point\+::\+Interest\+Point (\begin{DoxyParamCaption}\item[{const cv\+::\+Key\+Point \&}]{keypoint,  }\item[{const cv\+::\+Mat \&}]{descriptor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a0c56edbec7b284702d2c8f9fc2aa55f4}\label{classdefals_1_1_interest_point_a0c56edbec7b284702d2c8f9fc2aa55f4}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!Interest\+Point@{Interest\+Point}}
+\index{Interest\+Point@{Interest\+Point}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{Interest\+Point()}{InterestPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily defals\+::\+Interest\+Point\+::\+Interest\+Point (\begin{DoxyParamCaption}\item[{const cv\+::\+Point2f \&}]{point }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_ab9b4ce92e93ed5e946e94d38a328c15b}\label{classdefals_1_1_interest_point_ab9b4ce92e93ed5e946e94d38a328c15b}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!angle\+Equals@{angle\+Equals}}
+\index{angle\+Equals@{angle\+Equals}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{angle\+Equals()}{angleEquals()}}
+{\footnotesize\ttfamily bool Interest\+Point\+::angle\+Equals (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{other }\end{DoxyParamCaption}) const}
+
+Equals condition in terms of angles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \hyperlink{classdefals_1_1_interest_point}{Interest\+Point}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape this} and {\itshape other} have the same orientation, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file Interest\+Point.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classdefals_1_1_interest_point_ab9b4ce92e93ed5e946e94d38a328c15b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_ac90c377bd678447a7dac9f0c17765976}\label{classdefals_1_1_interest_point_ac90c377bd678447a7dac9f0c17765976}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!angle\+Lower@{angle\+Lower}}
+\index{angle\+Lower@{angle\+Lower}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{angle\+Lower()}{angleLower()}}
+{\footnotesize\ttfamily bool Interest\+Point\+::angle\+Lower (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{other }\end{DoxyParamCaption}) const}
+
+Lower condition in terms of angles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \hyperlink{classdefals_1_1_interest_point}{Interest\+Point}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape this} is lower in angle than {\itshape other} i.\+e. the difference of their angles is negative. 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file Interest\+Point.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classdefals_1_1_interest_point_ac90c377bd678447a7dac9f0c17765976_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_ad479527a3ec0d7f765f949d6b41c10a6}\label{classdefals_1_1_interest_point_ad479527a3ec0d7f765f949d6b41c10a6}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!descriptor\+Equals@{descriptor\+Equals}}
+\index{descriptor\+Equals@{descriptor\+Equals}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{descriptor\+Equals()}{descriptorEquals()}}
+{\footnotesize\ttfamily bool Interest\+Point\+::descriptor\+Equals (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{other }\end{DoxyParamCaption}) const}
+
+Equality condition in terms of descriptors\textquotesingle{} distance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \hyperlink{classdefals_1_1_interest_point}{Interest\+Point}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape this} is equal to {\itshape other} i.\+e. their descriptors\textquotesingle{} euclidean distance is zero. 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Interest\+Point.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classdefals_1_1_interest_point_ad479527a3ec0d7f765f949d6b41c10a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_aba9dc4741dd4631df0d1e7567eea9bc4}\label{classdefals_1_1_interest_point_aba9dc4741dd4631df0d1e7567eea9bc4}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!descriptor\+Lower@{descriptor\+Lower}}
+\index{descriptor\+Lower@{descriptor\+Lower}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{descriptor\+Lower()}{descriptorLower()}}
+{\footnotesize\ttfamily bool Interest\+Point\+::descriptor\+Lower (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{other }\end{DoxyParamCaption}) const}
+
+Lower condition in terms of descriptors\textquotesingle{} norms.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \hyperlink{classdefals_1_1_interest_point}{Interest\+Point}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape this} is lower in norm than {\itshape other} i.\+e. the difference of the norms of their respective descriptors is negative. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Interest\+Point.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a47d55468ef29a100ed6c118e5bf21ae8}\label{classdefals_1_1_interest_point_a47d55468ef29a100ed6c118e5bf21ae8}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!format\+Descriptor@{format\+Descriptor}}
+\index{format\+Descriptor@{format\+Descriptor}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{format\+Descriptor()}{formatDescriptor()}}
+{\footnotesize\ttfamily template$<$class T  = float$>$ \\
+std\+::string defals\+::\+Interest\+Point\+::format\+Descriptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is not defined in the source file because it\textquotesingle{}s a template. It just prints nicely the descriptor of the considered keypoint.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Matrix data type.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A string representing the descriptor in the accurate type. 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file Interest\+Point.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a63862b65c659caa8f2098bdbf06c2b7c}\label{classdefals_1_1_interest_point_a63862b65c659caa8f2098bdbf06c2b7c}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!get\+Angle\+Idx@{get\+Angle\+Idx}}
+\index{get\+Angle\+Idx@{get\+Angle\+Idx}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{get\+Angle\+Idx()}{getAngleIdx()}}
+{\footnotesize\ttfamily int Interest\+Point\+::get\+Angle\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 101 of file Interest\+Point.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_interest_point_a63862b65c659caa8f2098bdbf06c2b7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a1defbefa0bceea4052200c4348e4ef52}\label{classdefals_1_1_interest_point_a1defbefa0bceea4052200c4348e4ef52}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!get\+Descriptor@{get\+Descriptor}}
+\index{get\+Descriptor@{get\+Descriptor}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{get\+Descriptor()}{getDescriptor()}}
+{\footnotesize\ttfamily const cv\+::\+Mat \& Interest\+Point\+::get\+Descriptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \+\_\+\+\_\+descriptor\+\_\+.
+
+\begin{DoxyReturn}{Returns}
+The keypoint\textquotesingle{}s descriptor. 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file Interest\+Point.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_interest_point_a1defbefa0bceea4052200c4348e4ef52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a66e0a2140102e33905d198041602396b}\label{classdefals_1_1_interest_point_a66e0a2140102e33905d198041602396b}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!get\+Norm\+Idx@{get\+Norm\+Idx}}
+\index{get\+Norm\+Idx@{get\+Norm\+Idx}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{get\+Norm\+Idx()}{getNormIdx()}}
+{\footnotesize\ttfamily int Interest\+Point\+::get\+Norm\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 109 of file Interest\+Point.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_interest_point_a66e0a2140102e33905d198041602396b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_af99319f9c5cd2126719d1ec804572a3f}\label{classdefals_1_1_interest_point_af99319f9c5cd2126719d1ec804572a3f}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!print\+Keypoint@{print\+Keypoint}}
+\index{print\+Keypoint@{print\+Keypoint}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{print\+Keypoint()}{printKeypoint()}}
+{\footnotesize\ttfamily std\+::string Interest\+Point\+::print\+Keypoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Prints keypoint in format (x, y).
+
+\begin{DoxyReturn}{Returns}
+A string formatted as (x, y). 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Interest\+Point.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a8fa7d8032a91b91a85eafefd2f46988e}\label{classdefals_1_1_interest_point_a8fa7d8032a91b91a85eafefd2f46988e}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!set\+Angle\+Idx@{set\+Angle\+Idx}}
+\index{set\+Angle\+Idx@{set\+Angle\+Idx}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{set\+Angle\+Idx()}{setAngleIdx()}}
+{\footnotesize\ttfamily void Interest\+Point\+::set\+Angle\+Idx (\begin{DoxyParamCaption}\item[{int}]{angle\+Idx }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file Interest\+Point.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_ab8d314ee9fd1482bf8705ad6615e06a0}\label{classdefals_1_1_interest_point_ab8d314ee9fd1482bf8705ad6615e06a0}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!set\+Norm\+Idx@{set\+Norm\+Idx}}
+\index{set\+Norm\+Idx@{set\+Norm\+Idx}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{set\+Norm\+Idx()}{setNormIdx()}}
+{\footnotesize\ttfamily void Interest\+Point\+::set\+Norm\+Idx (\begin{DoxyParamCaption}\item[{int}]{norm\+Idx }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file Interest\+Point.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a635589d58f12cab7408e4068f6cf5828}\label{classdefals_1_1_interest_point_a635589d58f12cab7408e4068f6cf5828}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!\+\_\+angle\+Idx@{\+\_\+angle\+Idx}}
+\index{\+\_\+angle\+Idx@{\+\_\+angle\+Idx}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{\+\_\+angle\+Idx}{\_angleIdx}}
+{\footnotesize\ttfamily int defals\+::\+Interest\+Point\+::\+\_\+angle\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+The index of the keypoint in the angle-\/sorted list 
+
+Definition at line 96 of file Interest\+Point.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_aaa341f5d37a05dcf8f53124a07274497}\label{classdefals_1_1_interest_point_aaa341f5d37a05dcf8f53124a07274497}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!\+\_\+descriptor@{\+\_\+descriptor}}
+\index{\+\_\+descriptor@{\+\_\+descriptor}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{\+\_\+descriptor}{\_descriptor}}
+{\footnotesize\ttfamily cv\+::\+Mat defals\+::\+Interest\+Point\+::\+\_\+descriptor\hspace{0.3cm}{\ttfamily [private]}}
+
+A 1x64 or 1x128 vector standing for the descriptor of the keypoint 
+
+Definition at line 93 of file Interest\+Point.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_interest_point_a8e6671d9215b3a767479ec6e11bdb1d2}\label{classdefals_1_1_interest_point_a8e6671d9215b3a767479ec6e11bdb1d2}} 
+\index{defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}!\+\_\+norm\+Idx@{\+\_\+norm\+Idx}}
+\index{\+\_\+norm\+Idx@{\+\_\+norm\+Idx}!defals\+::\+Interest\+Point@{defals\+::\+Interest\+Point}}
+\subsubsection{\texorpdfstring{\+\_\+norm\+Idx}{\_normIdx}}
+{\footnotesize\ttfamily int defals\+::\+Interest\+Point\+::\+\_\+norm\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+The index of the keypoint in the norm-\/sorted list 
+
+Definition at line 98 of file Interest\+Point.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_interest_point_8hpp}{Interest\+Point.\+hpp}\item 
+src/\hyperlink{_interest_point_8cpp}{Interest\+Point.\+cpp}\end{DoxyCompactItemize}

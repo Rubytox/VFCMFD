@@ -1,0 +1,178 @@
+.TH "DBSCAN" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBSCAN
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbscan\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDBSCAN\fP (unsigned int minPts, float eps, std::vector< \fBdefals::ClusteredLine\fP > &lines)"
+.br
+.ti -1c
+.RI "std::vector< \fBdefals::ClusteredLine\fP > \fBrun\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static double \fBcalculateDistance\fP (const \fBdefals::ClusteredLine\fP &pointCore, const \fBdefals::ClusteredLine\fP &pointTarget, double _wx=1, double _wy=1, double _wtheta=1, double wl=1)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::vector< int > \fBcalculateCluster\fP (\fBdefals::ClusteredLine\fP &point)"
+.br
+.ti -1c
+.RI "int \fBexpandCluster\fP (\fBdefals::ClusteredLine\fP &line, int clusterID)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBdefals::ClusteredLine\fP > \fB_lines\fP"
+.br
+.ti -1c
+.RI "unsigned int \fB_pointSize\fP"
+.br
+.ti -1c
+.RI "unsigned int \fB_minPoints\fP"
+.br
+.ti -1c
+.RI "float \fB_epsilon\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class stands for a scanner using \fBDBSCAN\fP algorithm\&. It specializes in the detection of dense clusters of segments represented in 4D by: (x, y, theta, l) where:
+.IP "\(bu" 2
+(x,y) : closest end of the segment to (0, 0)
+.IP "\(bu" 2
+theta : the polar angle of the segment
+.IP "\(bu" 2
+l : the length of the segment 
+.PP
+
+.PP
+Definition at line 25 of file dbscan\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DBSCAN::DBSCAN (unsigned int minPts, float eps, std::vector< \fBdefals::ClusteredLine\fP > & lines)"
+Constructs a scanner using \fBDBSCAN\fP algorithm\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIminPts\fP Minimal number of points required in a eps-neighbourhood\&. 
+.br
+\fIeps\fP Radius of the neighbourhood\&. 
+.br
+\fIlines\fP The lines to cluster\&. 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file dbscan\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "vector< int > DBSCAN::calculateCluster (\fBdefals::ClusteredLine\fP & point)\fC [private]\fP"
+Computes the eps-neighbourhood of a line\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpoint\fP The line at the center of the neighbourhood\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of indices representing the neighbour of \fIline\fP in __lines_\&. 
+.RE
+.PP
+
+.PP
+Definition at line 114 of file dbscan\&.cpp\&.
+.SS "static double DBSCAN::calculateDistance (const \fBdefals::ClusteredLine\fP & pointCore, const \fBdefals::ClusteredLine\fP & pointTarget, double _wx = \fC1\fP, double _wy = \fC1\fP, double _wtheta = \fC1\fP, double wl = \fC1\fP)\fC [inline]\fP, \fC [static]\fP"
+This function computes the distance between two segments defined as said above\&. Each of the four parameters has a weight that can be used to give more or less importance to one parameter\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpointCore\fP One of the lines\&. 
+.br
+\fIpointTarget\fP The other line\&. 
+.br
+\fIwx\fP The weight on parameter x\&. 
+.br
+\fIwy\fP The weight on parameter y\&. 
+.br
+\fIwtheta\fP The weight on parameter theta\&. 
+.br
+\fIwl\fP The weight on parameter l\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The weighted distance of the two lines\&. 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file dbscan\&.hpp\&.
+.SS "int DBSCAN::expandCluster (\fBdefals::ClusteredLine\fP & line, int clusterID)\fC [private]\fP"
+Given a line, creates new cluster from it, adds line to another cluster or classifies it as noise\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIline\fP A line that hasn't been clustered yet\&. 
+.br
+\fIclusterID\fP The ID of the cluster we're expanding\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+SUCCESS if the line has been successfully classified\&. FAILRUE if the line has been classified as noise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file dbscan\&.cpp\&.
+.SS "vector< \fBClusteredLine\fP > DBSCAN::run ()"
+This is the method that starts the \fBDBSCAN\fP algorithm\&.
+.PP
+\fBReturns:\fP
+.RS 4
+A vector containing the lines with their _idCluster set\&. 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file dbscan\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float DBSCAN::_epsilon\fC [private]\fP"
+The radius of the considered neighbourhood 
+.PP
+Definition at line 74 of file dbscan\&.hpp\&.
+.SS "std::vector<\fBdefals::ClusteredLine\fP> DBSCAN::_lines\fC [private]\fP"
+The lines we want to cluster 
+.PP
+Definition at line 68 of file dbscan\&.hpp\&.
+.SS "unsigned int DBSCAN::_minPoints\fC [private]\fP"
+The minimal number of points in a neighbourhood 
+.PP
+Definition at line 72 of file dbscan\&.hpp\&.
+.SS "unsigned int DBSCAN::_pointSize\fC [private]\fP"
+The number of lines 
+.PP
+Definition at line 70 of file dbscan\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

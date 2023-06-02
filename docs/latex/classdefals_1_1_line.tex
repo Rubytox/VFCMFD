@@ -1,0 +1,627 @@
+\hypertarget{classdefals_1_1_line}{}\section{defals\+:\+:Line Class Reference}
+\label{classdefals_1_1_line}\index{defals\+::\+Line@{defals\+::\+Line}}
+
+
+{\ttfamily \#include $<$line.\+hpp$>$}
+
+
+
+Inheritance diagram for defals\+:\+:Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classdefals_1_1_line__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for defals\+:\+:Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classdefals_1_1_line__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefals_1_1_line_abede8f2808bda8a485e99e40c8ff3d38}{Line} (\hyperlink{classdefals_1_1_interest_point}{Interest\+Point} point1, \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} point2)
+\item 
+\hyperlink{classdefals_1_1_line_ac40968264c0af3b70506c13ce3b70b5b}{Line} (const \hyperlink{classdefals_1_1_line}{Line} \&other)
+\item 
+void \hyperlink{classdefals_1_1_line_aff1b80e77814f9136512023fdfedaf85}{draw} (cv\+::\+Mat \&canvas, const cv\+::\+Scalar \&color=cv\+::\+Scalar(0, 0, 255), int thickness=3) const
+\item 
+void \hyperlink{classdefals_1_1_line_a5807943405bdaadfea9b35eeb63fdd46}{prolonger} (cv\+::\+Mat \&canvas, cv\+::\+Scalar color=cv\+::\+Scalar(0, 255, 0), int thickness=3) const
+\item 
+void \hyperlink{classdefals_1_1_line_af77fba109ba0f85eca871478f2a9fe28}{print\+Polar} () const
+\item 
+void \hyperlink{classdefals_1_1_line_a0ca052b53e5b2c21003ff7422fa23064}{print\+Polar3D} () const
+\item 
+void \hyperlink{classdefals_1_1_line_a56673f0353400060779c6f3b994f110e}{print\+Cartes} () const
+\item 
+std\+::string \hyperlink{classdefals_1_1_line_a8bed9f8c95fec470526b5d91a9681ee4}{to\+String} () const
+\item 
+std\+::string \hyperlink{classdefals_1_1_line_a1ff7ede93d7ac87e25ea55879de1665b}{to\+String\+Cartes} () const
+\item 
+std\+::string \hyperlink{classdefals_1_1_line_a4dabf6b34922c349b645a36a499f9cf9}{to\+String\+D\+B\+S\+C\+AN} () const
+\item 
+double \hyperlink{classdefals_1_1_line_a0fec2160803d603b3f341814ccf67499}{distance\+Origine} () const
+\item 
+\hyperlink{classdefals_1_1_line}{Line} \hyperlink{classdefals_1_1_line_a492062a13ab9927c7b933a1cbdfffc37}{get\+Ortho} () const
+\item 
+cv\+::\+Vec2f \hyperlink{classdefals_1_1_line_a1ef3a690801f085b7f7eb20b7d09ef8f}{director} () const
+\item 
+cv\+::\+Point2f $\ast$ \hyperlink{classdefals_1_1_line_aed7eb799e6b17c5938acafe14c94fb70}{intersect} (const \hyperlink{classdefals_1_1_line}{Line} \&other) const
+\item 
+void \hyperlink{classdefals_1_1_line_afd9940c88b4d83aeaa9313d71fc93fdd}{translate} (double dx, double dy)
+\item 
+double \hyperlink{classdefals_1_1_line_a908b142ba4a17102326274ffcd83d3b4}{length} () const
+\item 
+bool \hyperlink{classdefals_1_1_line_a99488154d6dc7781097fdd1e71546395}{proche} (const \hyperlink{classdefals_1_1_line}{Line} \&other, int rho\+Treshold=8000, double theta\+Threshold=0.\+1) const
+\item 
+void \hyperlink{classdefals_1_1_line_ae479c8d219ad3eb6088f17fb1b7178ef}{invert} ()
+\item 
+double \hyperlink{classdefals_1_1_line_ab8aafcf0f1dc98dcd8193a92c169500b}{pente} () const
+\item 
+bool \hyperlink{classdefals_1_1_line_a55c7e9badee5057b3d001429a0d62aab}{equals} (const \hyperlink{classdefals_1_1_line}{Line} \&other) const
+\item 
+const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \& \hyperlink{classdefals_1_1_line_a0dea2160453de4dbda56426cc3305f93}{get\+Point1} () const
+\item 
+const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \& \hyperlink{classdefals_1_1_line_a21ad33e8b62513d0b9ca68a345f61f5a}{get\+Point2} () const
+\item 
+double \hyperlink{classdefals_1_1_line_a537fefe10a592ef543888a91b6a6d118}{get\+Theta} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Point2f \hyperlink{classdefals_1_1_line_a90312d4ec4bb1b1ea65c7f8abe6383f3}{ortho} () const
+\item 
+void \hyperlink{classdefals_1_1_line_a82e84373baddc704f337618952c54ccb}{compute\+Polar} ()
+\item 
+void \hyperlink{classdefals_1_1_line_a9b82bc15d9464d7b33c1ec417a5f707d}{compute\+Cartes} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \hyperlink{classdefals_1_1_line_a80a5cb3ddcc4a8e0886f11c28b8aec82}{\+\_\+point1}
+\item 
+\hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \hyperlink{classdefals_1_1_line_a11de125d1a030be2ad42ebe9742ea6ad}{\+\_\+point2}
+\item 
+double \hyperlink{classdefals_1_1_line_a49d1d66185aa34cb7d16886d77fe8af1}{\+\_\+a}
+\item 
+double \hyperlink{classdefals_1_1_line_a499efa9575dbc3c187835b26759750b9}{\+\_\+b}
+\item 
+double \hyperlink{classdefals_1_1_line_ae7a6360dde2b061056d03a4aec9c9855}{\+\_\+c}
+\item 
+cv\+::\+Point2f \hyperlink{classdefals_1_1_line_aa132df249a860ea17578f8342ff0eaaa}{\+\_\+origine\+Ortho}
+\item 
+cv\+::\+Point2f \hyperlink{classdefals_1_1_line_a198ea774dbce7e8d8b1d404b22504074}{\+\_\+point\+Ortho}
+\item 
+double \hyperlink{classdefals_1_1_line_a916e7716467f69bb5cb3c9c6c1d729a3}{\+\_\+rho}
+\item 
+double \hyperlink{classdefals_1_1_line_ad9528d349ad7537ed883a23966cb8830}{\+\_\+theta}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provided various representations of a line \+:
+\begin{DoxyItemize}
+\item cartesian coordinates
+\item polar coordinates
+\item start point / end point representation 
+\end{DoxyItemize}
+
+Definition at line 23 of file line.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdefals_1_1_line_abede8f2808bda8a485e99e40c8ff3d38}\label{classdefals_1_1_line_abede8f2808bda8a485e99e40c8ff3d38}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!Line@{Line}}
+\index{Line@{Line}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{Line()}{Line()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Line\+::\+Line (\begin{DoxyParamCaption}\item[{\hyperlink{classdefals_1_1_interest_point}{Interest\+Point}}]{point1,  }\item[{\hyperlink{classdefals_1_1_interest_point}{Interest\+Point}}]{point2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classdefals_1_1_line_abede8f2808bda8a485e99e40c8ff3d38_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classdefals_1_1_line_abede8f2808bda8a485e99e40c8ff3d38_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_ac40968264c0af3b70506c13ce3b70b5b}\label{classdefals_1_1_line_ac40968264c0af3b70506c13ce3b70b5b}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!Line@{Line}}
+\index{Line@{Line}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{Line()}{Line()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Line\+::\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classdefals_1_1_line_ac40968264c0af3b70506c13ce3b70b5b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdefals_1_1_line_a9b82bc15d9464d7b33c1ec417a5f707d}\label{classdefals_1_1_line_a9b82bc15d9464d7b33c1ec417a5f707d}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!compute\+Cartes@{compute\+Cartes}}
+\index{compute\+Cartes@{compute\+Cartes}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{compute\+Cartes()}{computeCartes()}}
+{\footnotesize\ttfamily void Line\+::compute\+Cartes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 90 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a9b82bc15d9464d7b33c1ec417a5f707d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a82e84373baddc704f337618952c54ccb}\label{classdefals_1_1_line_a82e84373baddc704f337618952c54ccb}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!compute\+Polar@{compute\+Polar}}
+\index{compute\+Polar@{compute\+Polar}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{compute\+Polar()}{computePolar()}}
+{\footnotesize\ttfamily void Line\+::compute\+Polar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 108 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a82e84373baddc704f337618952c54ccb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a1ef3a690801f085b7f7eb20b7d09ef8f}\label{classdefals_1_1_line_a1ef3a690801f085b7f7eb20b7d09ef8f}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!director@{director}}
+\index{director@{director}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{director()}{director()}}
+{\footnotesize\ttfamily Vec2f Line\+::director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 150 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a1ef3a690801f085b7f7eb20b7d09ef8f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a0fec2160803d603b3f341814ccf67499}\label{classdefals_1_1_line_a0fec2160803d603b3f341814ccf67499}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!distance\+Origine@{distance\+Origine}}
+\index{distance\+Origine@{distance\+Origine}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{distance\+Origine()}{distanceOrigine()}}
+{\footnotesize\ttfamily double Line\+::distance\+Origine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 27 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_aff1b80e77814f9136512023fdfedaf85}\label{classdefals_1_1_line_aff1b80e77814f9136512023fdfedaf85}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!draw@{draw}}
+\index{draw@{draw}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Line\+::draw (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{canvas,  }\item[{const cv\+::\+Scalar \&}]{color = {\ttfamily cv\+:\+:Scalar(0,~0,~255)},  }\item[{int}]{thickness = {\ttfamily 3} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 32 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a55c7e9badee5057b3d001429a0d62aab}\label{classdefals_1_1_line_a55c7e9badee5057b3d001429a0d62aab}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!equals@{equals}}
+\index{equals@{equals}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily bool Line\+::equals (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 182 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classdefals_1_1_line_a55c7e9badee5057b3d001429a0d62aab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a492062a13ab9927c7b933a1cbdfffc37}\label{classdefals_1_1_line_a492062a13ab9927c7b933a1cbdfffc37}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!get\+Ortho@{get\+Ortho}}
+\index{get\+Ortho@{get\+Ortho}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{get\+Ortho()}{getOrtho()}}
+{\footnotesize\ttfamily \hyperlink{classdefals_1_1_line}{Line} Line\+::get\+Ortho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 75 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a492062a13ab9927c7b933a1cbdfffc37_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a0dea2160453de4dbda56426cc3305f93}\label{classdefals_1_1_line_a0dea2160453de4dbda56426cc3305f93}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!get\+Point1@{get\+Point1}}
+\index{get\+Point1@{get\+Point1}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{get\+Point1()}{getPoint1()}}
+{\footnotesize\ttfamily const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \& Line\+::get\+Point1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 242 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a0dea2160453de4dbda56426cc3305f93_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a21ad33e8b62513d0b9ca68a345f61f5a}\label{classdefals_1_1_line_a21ad33e8b62513d0b9ca68a345f61f5a}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!get\+Point2@{get\+Point2}}
+\index{get\+Point2@{get\+Point2}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{get\+Point2()}{getPoint2()}}
+{\footnotesize\ttfamily const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \& Line\+::get\+Point2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 246 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a537fefe10a592ef543888a91b6a6d118}\label{classdefals_1_1_line_a537fefe10a592ef543888a91b6a6d118}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!get\+Theta@{get\+Theta}}
+\index{get\+Theta@{get\+Theta}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{get\+Theta()}{getTheta()}}
+{\footnotesize\ttfamily double Line\+::get\+Theta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 257 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a537fefe10a592ef543888a91b6a6d118_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_aed7eb799e6b17c5938acafe14c94fb70}\label{classdefals_1_1_line_aed7eb799e6b17c5938acafe14c94fb70}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!intersect@{intersect}}
+\index{intersect@{intersect}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily Point2f $\ast$ Line\+::intersect (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 155 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classdefals_1_1_line_aed7eb799e6b17c5938acafe14c94fb70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classdefals_1_1_line_aed7eb799e6b17c5938acafe14c94fb70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_ae479c8d219ad3eb6088f17fb1b7178ef}\label{classdefals_1_1_line_ae479c8d219ad3eb6088f17fb1b7178ef}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!invert@{invert}}
+\index{invert@{invert}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily void Line\+::invert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 204 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_ae479c8d219ad3eb6088f17fb1b7178ef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a908b142ba4a17102326274ffcd83d3b4}\label{classdefals_1_1_line_a908b142ba4a17102326274ffcd83d3b4}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!length@{length}}
+\index{length@{length}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily double Line\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 103 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a908b142ba4a17102326274ffcd83d3b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a90312d4ec4bb1b1ea65c7f8abe6383f3}\label{classdefals_1_1_line_a90312d4ec4bb1b1ea65c7f8abe6383f3}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!ortho@{ortho}}
+\index{ortho@{ortho}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{ortho()}{ortho()}}
+{\footnotesize\ttfamily Point2f Line\+::ortho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 80 of file line.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a90312d4ec4bb1b1ea65c7f8abe6383f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_ab8aafcf0f1dc98dcd8193a92c169500b}\label{classdefals_1_1_line_ab8aafcf0f1dc98dcd8193a92c169500b}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!pente@{pente}}
+\index{pente@{pente}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{pente()}{pente()}}
+{\footnotesize\ttfamily double Line\+::pente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 250 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a56673f0353400060779c6f3b994f110e}\label{classdefals_1_1_line_a56673f0353400060779c6f3b994f110e}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!print\+Cartes@{print\+Cartes}}
+\index{print\+Cartes@{print\+Cartes}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{print\+Cartes()}{printCartes()}}
+{\footnotesize\ttfamily void Line\+::print\+Cartes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 131 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_af77fba109ba0f85eca871478f2a9fe28}\label{classdefals_1_1_line_af77fba109ba0f85eca871478f2a9fe28}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!print\+Polar@{print\+Polar}}
+\index{print\+Polar@{print\+Polar}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{print\+Polar()}{printPolar()}}
+{\footnotesize\ttfamily void Line\+::print\+Polar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 121 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a0ca052b53e5b2c21003ff7422fa23064}\label{classdefals_1_1_line_a0ca052b53e5b2c21003ff7422fa23064}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!print\+Polar3D@{print\+Polar3D}}
+\index{print\+Polar3D@{print\+Polar3D}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{print\+Polar3\+D()}{printPolar3D()}}
+{\footnotesize\ttfamily void Line\+::print\+Polar3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 126 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classdefals_1_1_line_a0ca052b53e5b2c21003ff7422fa23064_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a99488154d6dc7781097fdd1e71546395}\label{classdefals_1_1_line_a99488154d6dc7781097fdd1e71546395}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!proche@{proche}}
+\index{proche@{proche}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{proche()}{proche()}}
+{\footnotesize\ttfamily bool Line\+::proche (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{other,  }\item[{int}]{rho\+Treshold = {\ttfamily 8000},  }\item[{double}]{theta\+Threshold = {\ttfamily 0.1} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 199 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a5807943405bdaadfea9b35eeb63fdd46}\label{classdefals_1_1_line_a5807943405bdaadfea9b35eeb63fdd46}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!prolonger@{prolonger}}
+\index{prolonger@{prolonger}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{prolonger()}{prolonger()}}
+{\footnotesize\ttfamily void Line\+::prolonger (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{canvas,  }\item[{cv\+::\+Scalar}]{color = {\ttfamily cv\+:\+:Scalar(0,~255,~0)},  }\item[{int}]{thickness = {\ttfamily 3} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 39 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a5807943405bdaadfea9b35eeb63fdd46_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a8bed9f8c95fec470526b5d91a9681ee4}\label{classdefals_1_1_line_a8bed9f8c95fec470526b5d91a9681ee4}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily string Line\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 137 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classdefals_1_1_line_a8bed9f8c95fec470526b5d91a9681ee4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classdefals_1_1_line_a8bed9f8c95fec470526b5d91a9681ee4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_a1ff7ede93d7ac87e25ea55879de1665b}\label{classdefals_1_1_line_a1ff7ede93d7ac87e25ea55879de1665b}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!to\+String\+Cartes@{to\+String\+Cartes}}
+\index{to\+String\+Cartes@{to\+String\+Cartes}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{to\+String\+Cartes()}{toStringCartes()}}
+{\footnotesize\ttfamily string Line\+::to\+String\+Cartes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 142 of file line.\+cpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a4dabf6b34922c349b645a36a499f9cf9}\label{classdefals_1_1_line_a4dabf6b34922c349b645a36a499f9cf9}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!to\+String\+D\+B\+S\+C\+AN@{to\+String\+D\+B\+S\+C\+AN}}
+\index{to\+String\+D\+B\+S\+C\+AN@{to\+String\+D\+B\+S\+C\+AN}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{to\+String\+D\+B\+S\+C\+A\+N()}{toStringDBSCAN()}}
+{\footnotesize\ttfamily string Line\+::to\+String\+D\+B\+S\+C\+AN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 261 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_a4dabf6b34922c349b645a36a499f9cf9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdefals_1_1_line_afd9940c88b4d83aeaa9313d71fc93fdd}\label{classdefals_1_1_line_afd9940c88b4d83aeaa9313d71fc93fdd}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!translate@{translate}}
+\index{translate@{translate}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void Line\+::translate (\begin{DoxyParamCaption}\item[{double}]{dx,  }\item[{double}]{dy }\end{DoxyParamCaption})}
+
+
+
+Definition at line 189 of file line.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdefals_1_1_line_afd9940c88b4d83aeaa9313d71fc93fdd_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdefals_1_1_line_a49d1d66185aa34cb7d16886d77fe8af1}\label{classdefals_1_1_line_a49d1d66185aa34cb7d16886d77fe8af1}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+a@{\+\_\+a}}
+\index{\+\_\+a@{\+\_\+a}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+a}{\_a}}
+{\footnotesize\ttfamily double defals\+::\+Line\+::\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 110 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a499efa9575dbc3c187835b26759750b9}\label{classdefals_1_1_line_a499efa9575dbc3c187835b26759750b9}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+b@{\+\_\+b}}
+\index{\+\_\+b@{\+\_\+b}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+b}{\_b}}
+{\footnotesize\ttfamily double defals\+::\+Line\+::\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 111 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_ae7a6360dde2b061056d03a4aec9c9855}\label{classdefals_1_1_line_ae7a6360dde2b061056d03a4aec9c9855}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+c@{\+\_\+c}}
+\index{\+\_\+c@{\+\_\+c}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+c}{\_c}}
+{\footnotesize\ttfamily double defals\+::\+Line\+::\+\_\+c\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 112 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_aa132df249a860ea17578f8342ff0eaaa}\label{classdefals_1_1_line_aa132df249a860ea17578f8342ff0eaaa}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+origine\+Ortho@{\+\_\+origine\+Ortho}}
+\index{\+\_\+origine\+Ortho@{\+\_\+origine\+Ortho}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+origine\+Ortho}{\_origineOrtho}}
+{\footnotesize\ttfamily cv\+::\+Point2f defals\+::\+Line\+::\+\_\+origine\+Ortho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 114 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a80a5cb3ddcc4a8e0886f11c28b8aec82}\label{classdefals_1_1_line_a80a5cb3ddcc4a8e0886f11c28b8aec82}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+point1@{\+\_\+point1}}
+\index{\+\_\+point1@{\+\_\+point1}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+point1}{\_point1}}
+{\footnotesize\ttfamily \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} defals\+::\+Line\+::\+\_\+point1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 104 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a11de125d1a030be2ad42ebe9742ea6ad}\label{classdefals_1_1_line_a11de125d1a030be2ad42ebe9742ea6ad}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+point2@{\+\_\+point2}}
+\index{\+\_\+point2@{\+\_\+point2}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+point2}{\_point2}}
+{\footnotesize\ttfamily \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} defals\+::\+Line\+::\+\_\+point2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 105 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a198ea774dbce7e8d8b1d404b22504074}\label{classdefals_1_1_line_a198ea774dbce7e8d8b1d404b22504074}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+point\+Ortho@{\+\_\+point\+Ortho}}
+\index{\+\_\+point\+Ortho@{\+\_\+point\+Ortho}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+point\+Ortho}{\_pointOrtho}}
+{\footnotesize\ttfamily cv\+::\+Point2f defals\+::\+Line\+::\+\_\+point\+Ortho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 115 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_a916e7716467f69bb5cb3c9c6c1d729a3}\label{classdefals_1_1_line_a916e7716467f69bb5cb3c9c6c1d729a3}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+rho@{\+\_\+rho}}
+\index{\+\_\+rho@{\+\_\+rho}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+rho}{\_rho}}
+{\footnotesize\ttfamily double defals\+::\+Line\+::\+\_\+rho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 120 of file line.\+hpp.
+
+\mbox{\Hypertarget{classdefals_1_1_line_ad9528d349ad7537ed883a23966cb8830}\label{classdefals_1_1_line_ad9528d349ad7537ed883a23966cb8830}} 
+\index{defals\+::\+Line@{defals\+::\+Line}!\+\_\+theta@{\+\_\+theta}}
+\index{\+\_\+theta@{\+\_\+theta}!defals\+::\+Line@{defals\+::\+Line}}
+\subsubsection{\texorpdfstring{\+\_\+theta}{\_theta}}
+{\footnotesize\ttfamily double defals\+::\+Line\+::\+\_\+theta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 121 of file line.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{line_8hpp}{line.\+hpp}\item 
+src/\hyperlink{line_8cpp}{line.\+cpp}\end{DoxyCompactItemize}

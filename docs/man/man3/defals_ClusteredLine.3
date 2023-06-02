@@ -1,0 +1,86 @@
+.TH "defals::ClusteredLine" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defals::ClusteredLine
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClusteredLine\&.hpp>\fP
+.PP
+Inherits \fBdefals::Line\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClusteredLine\fP (const \fBLine\fP &line, int idCluster=\-1)"
+.br
+.ti -1c
+.RI "int \fBgetId\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (int id)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_idCluster\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used by \fBDBSCAN\fP scanner in order to represent a segment belonging to a specific class\&. 
+.PP
+Definition at line 15 of file ClusteredLine\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ClusteredLine::ClusteredLine (const \fBLine\fP & line, int idCluster = \fC\-1\fP)"
+Constructs a \fBLine\fP belonging to a cluster: it is a line that has an ID\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIline\fP The base \fBLine\fP object\&. 
+.br
+\fIidCluster\fP The ID of the cluster the line belongs to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file ClusteredLine\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int ClusteredLine::getId () const"
+Get the ID of the cluster the line belongs to\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The ID of the cluster the line belongs to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file ClusteredLine\&.cpp\&.
+.SS "void ClusteredLine::setId (int id)"
+Sets the ID of the cluster the line belongs to\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIid\fP The ID of the cluster the line belongs to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file ClusteredLine\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int defals::ClusteredLine::_idCluster\fC [private]\fP"
+-2 if noise, n > 0 otherwise 
+.PP
+Definition at line 24 of file ClusteredLine\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

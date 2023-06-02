@@ -1,0 +1,8 @@
+<map id="defals::copyMoveDetector::randomLines" name="defals::copyMoveDetector::randomLines">
+<area shape="rect" id="node2" href="$copy_move_detector_8cpp.html#a913905d28dadba254bab666aad6b7db6" title="genInitialLine" alt="" coords="234,5,333,32"/>
+<area shape="rect" id="node4" href="$copy_move_detector_8cpp.html#ae5d7e0a849d271e27cfbec973fff560a" title="genParallelLine" alt="" coords="228,56,339,83"/>
+<area shape="rect" id="node3" href="$copy_move_detector_8cpp.html#a47f0575bc7055303778ca4e36aa65856" title="pointFrom4D" alt="" coords="414,5,511,32"/>
+<area shape="rect" id="node5" href="$classdefals_1_1_line.html#a0dea2160453de4dbda56426cc3305f93" title="defals::Line::getPoint1" alt="" coords="387,56,539,83"/>
+<area shape="rect" id="node6" href="$classdefals_1_1_line.html#a537fefe10a592ef543888a91b6a6d118" title="defals::Line::getTheta" alt="" coords="389,107,537,133"/>
+<area shape="rect" id="node7" href="$classdefals_1_1_line.html#a908b142ba4a17102326274ffcd83d3b4" title="defals::Line::length" alt="" coords="397,157,529,184"/>
+</map>

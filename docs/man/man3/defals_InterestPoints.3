@@ -1,0 +1,403 @@
+.TH "defals::InterestPoints" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defals::InterestPoints
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <InterestPoints\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInterestPoints\fP ()=default"
+.br
+.ti -1c
+.RI "\fBInterestPoints\fP (const std::vector< cv::KeyPoint > &keypoints, const cv::Mat &descriptors)"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBInterestPoint\fP > >::iterator \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBInterestPoint\fP > >::iterator \fBend\fP ()"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBInterestPoint\fP > >::const_iterator \fBbegin\fP () const"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBInterestPoint\fP > >::const_iterator \fBend\fP () const"
+.br
+.ti -1c
+.RI "const cv::Mat & \fBgetDescriptor\fP (int i) const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetDescriptors\fP () const"
+.br
+.ti -1c
+.RI "std::vector< cv::KeyPoint > \fBasKeyPoints\fP () const"
+.br
+.ti -1c
+.RI "const cv::Point2f & \fBpt\fP (int i) const"
+.br
+.ti -1c
+.RI "const \fBInterestPoint\fP & \fBget\fP (int i) const"
+.br
+.ti -1c
+.RI "const \fBInterestPoint\fP & \fBoperator[]\fP (int i) const"
+.br
+.ti -1c
+.RI "int \fBsize\fP () const"
+.br
+.ti -1c
+.RI "std::pair< int, int > \fBgetRangeAngle\fP (const \fBInterestPoint\fP &\fBpt\fP) const"
+.br
+.ti -1c
+.RI "std::pair< int, int > \fBgetRangeNorm\fP (const \fBInterestPoint\fP &\fBpt\fP) const"
+.br
+.ti -1c
+.RI "std::map< double, \fBInterestPoint\fP > \fBsimilarityAngle\fP (const \fBInterestPoint\fP &\fBpt\fP, int minIdx=0, int maxIdx=\-1) const"
+.br
+.ti -1c
+.RI "std::map< double, \fBInterestPoint\fP > \fBsimilarityNorm\fP (const \fBInterestPoint\fP &\fBpt\fP, int minIdx=0, int maxIdx=\-1) const"
+.br
+.ti -1c
+.RI "void \fBsort\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static double \fB_angleThreshold\fP = 2"
+.br
+.ti -1c
+.RI "static double \fB_normThreshold\fP = 0\&.8"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::pair< int, int > \fBgetRange\fP (const std::vector< std::shared_ptr< \fBInterestPoint\fP >> &pts, int i, double(comp)(const \fBInterestPoint\fP &, const \fBInterestPoint\fP &), double threshold) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBInterestPoint\fP > > \fB_pointsSortedAngle\fP"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBInterestPoint\fP > > \fB_pointsSortedNorm\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is a wrapper for an \fBInterestPoint\fP vector\&.
+.PP
+Given a cv::KeyPoint vector, it handles two vectors :
+.IP "\(bu" 2
+a vector of pointers to the keypoints, sorted by their angle value ;
+.IP "\(bu" 2
+a vector of pointers to the keypoints, sorted by the norm of their descriptor value\&. It is important to note that we don't duplicate points: each vector contains the exact same points that have been passed to the constructor, but sorted in a different order\&.
+.PP
+.PP
+Note: unless specified otherwise, the i-th keypoint is the i-th keypoint of the angles vector\&. 
+.PP
+Definition at line 25 of file InterestPoints\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "defals::InterestPoints::InterestPoints ()\fC [default]\fP"
+
+.SS "defals::InterestPoints::InterestPoints (const std::vector< cv::KeyPoint > & keypoints, const cv::Mat & descriptors)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "vector< KeyPoint > InterestPoints::asKeyPoints () const"
+Casts all the \fBInterestPoint\fP to cv::KeyPoint\&.
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of cv::KeyPoint corresponding to the \fBInterestPoint\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 209 of file InterestPoints\&.cpp\&.
+.SS "vector< shared_ptr< \fBInterestPoint\fP > >::iterator InterestPoints::begin ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+An iterator at the start of the angles vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file InterestPoints\&.cpp\&.
+.SS "std::vector< shared_ptr< \fBInterestPoint\fP > >::const_iterator InterestPoints::begin () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+A const iterator at the start of the angles vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file InterestPoints\&.cpp\&.
+.SS "vector< shared_ptr< \fBInterestPoint\fP > >::iterator InterestPoints::end ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+An iterator at the end of the angles vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file InterestPoints\&.cpp\&.
+.SS "std::vector< shared_ptr< \fBInterestPoint\fP > >::const_iterator InterestPoints::end () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+A const iterator at the end of the angles vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file InterestPoints\&.cpp\&.
+.SS "const \fBInterestPoint\fP & InterestPoints::get (int i) const"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP The index of the \fBInterestPoint\fP in the angles vector\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The i-th keypoint\&. 
+.RE
+.PP
+
+.PP
+Definition at line 200 of file InterestPoints\&.cpp\&.
+.SS "const cv::Mat & InterestPoints::getDescriptor (int i) const"
+Gets the descriptor of the i-th keypoint\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP The index of the \fBInterestPoint\fP in the angles vector\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The descriptor of the i-th keypoint\&. 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file InterestPoints\&.cpp\&.
+.SS "Mat InterestPoints::getDescriptors () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+A matrix of the descriptors of each keypoints\&. 
+.RE
+.PP
+
+.PP
+Definition at line 187 of file InterestPoints\&.cpp\&.
+.SS "pair< int, int > InterestPoints::getRange (const std::vector< std::shared_ptr< \fBInterestPoint\fP >> & pts, int i, double(comp)(const \fBInterestPoint\fP &, const \fBInterestPoint\fP &), double threshold) const\fC [private]\fP"
+This function actually computes the [minIdx, maxIdx] window described in:
+.IP "\(bu" 2
+\fBInterestPoints::getRangeAngle(const InterestPoint&) const\fP
+.IP "\(bu" 2
+\fBInterestPoints::getRangeNorm(const InterestPoint&) const\fP
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpts\fP The \fBSORTED\fP vector from which the window will be selected\&. 
+.br
+\fIi\fP The index of the keypoint at the center of the window in \fIpts\fP\&. 
+.br
+\fIcomp\fP The comparison function\&. 
+.br
+\fIthreshold\fP The threshold above which a point will not be selected\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A window [minIdx, maxIdx] around the \fIi\fP-th keypoint of \fIpts\fP such as:
+.RE
+.PP
+$ \forall j \in [\mathrm{minIdx}, \mathrm{maxIdx}], comp(pts[i], pts[j]) < \mathrm{threshold}$ 
+.PP
+Definition at line 286 of file InterestPoints\&.cpp\&.
+.SS "pair< int, int > InterestPoints::getRangeAngle (const \fBInterestPoint\fP & pt) const"
+Given an \fBInterestPoint\fP \fIpt\fP, computes the indices of a window around \fIpt\fP containing only points whose angle is not further from \fIpt\fP's by __angleThreshold_ degrees\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpt\fP The \fBInterestPoint\fP we want a window around\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pair of indices representing the window [\fIminIdx\fP, \fImaxIdx\fP] 
+.RE
+.PP
+
+.PP
+Definition at line 241 of file InterestPoints\&.cpp\&.
+.SS "pair< int, int > InterestPoints::getRangeNorm (const \fBInterestPoint\fP & pt) const"
+Given an \fBInterestPoint\fP \fIpt\fP, computes the indices of a window around \fIpt\fP containing only points whose descriptor's norm is not further from \fIpt\fP's by __normThreshold_\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpt\fP The \fBInterestPoint\fP we want a window around\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pair of indices representing the window [\fIminIdx\fP, \fImaxIdx\fP] 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file InterestPoints\&.cpp\&.
+.SS "const \fBInterestPoint\fP & InterestPoints::operator[] (int i) const"
+Overload of operator[] in order to access keypoints as in a vector\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP The index of the keypoint in angle vector\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The i-th \fBInterestPoint\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 225 of file InterestPoints\&.cpp\&.
+.SS "const Point2f & InterestPoints::pt (int i) const"
+Wrapper for cv::KeyPoint's pt attribute\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP The index of the \fBInterestPoint\fP in the angles vector\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The Point2f representing the position of the keypoint in the picture\&. 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file InterestPoints\&.cpp\&.
+.SS "std::map< double, \fBInterestPoint\fP > InterestPoints::similarityAngle (const \fBInterestPoint\fP & pt, int minIdx = \fC0\fP, int maxIdx = \fC\-1\fP) const"
+Helper function that computes a similarity vector for a keypoint\&. Given $X = \{x_1, ..., x_n\}$ a set of keypoints and $F = \{f_1, ..., f_n\}$ their respective descriptors, and given an index $i \in [1, n]$, this function computes the following vector: $D = \{d_1, ..., d_{n-1}\}$ such as :
+.IP "\(bu" 2
+$\forall j \in [1, n]\setminus\lbrace i\rbrace,\; d_j = ||f_i - f_j||_2$
+.IP "\(bu" 2
+the coordinates of $D$ are sorted by ascending order
+.PP
+.PP
+The code actually returns a map because as we need to sort the distances, we need to keep the correspondance between a computed distance and the matching descriptor\&. Thus, we return a map associating distances with the matching keypoint's index\&.
+.PP
+Practically, this method only computes the similarity vector in a range [\fIminIdx\fP, \fImaxIdx\fP] of the whole \fBInterestPoint\fP vector\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpt\fP The \fBInterestPoint\fP we want to compute a similarity vector of\&. 
+.br
+\fIminIdx\fP The first point we're going to compute the distance with\&. 
+.br
+\fImaxIdx\fP The last point we're going to compute the distance with\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A map associating the euclidean distance between keypoint \fIpt\fP and all the other keypoints in a [\fIminIdx\fP, \fImaxIdx\fP] window and the index of the corresponding other keypoints\&. 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file InterestPoints\&.cpp\&.
+.SS "std::map< double, \fBInterestPoint\fP > InterestPoints::similarityNorm (const \fBInterestPoint\fP & pt, int minIdx = \fC0\fP, int maxIdx = \fC\-1\fP) const"
+
+.PP
+Helper function that computes a similarity vector for a keypoint\&. Given $X = \{x_1, ..., x_n\}$ a set of keypoints and $F = \{f_1, ..., f_n\}$ their respective descriptors, and given an index $i \in [1, n]$, this function computes the following vector: $D = \{d_1, ..., d_{n-1}\}$ such as :
+.IP "\(bu" 2
+$\forall j \in [1, n]\setminus\lbrace i\rbrace,\; d_j = ||f_i - f_j||_2$
+.IP "\(bu" 2
+the coordinates of $D$ are sorted by ascending order
+.PP
+.PP
+The code actually returns a map because as we need to sort the distances, we need to keep the correspondance between a computed distance and the matching descriptor\&. Thus, we return a map associating distances with the matching keypoint's index\&.
+.PP
+Practically, this method only computes the similarity vector in a range [\fIminIdx\fP, \fImaxIdx\fP] of the whole \fBInterestPoint\fP vector\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpt\fP The \fBInterestPoint\fP we want to compute a similarity vector of\&. 
+.br
+\fIminIdx\fP The first point we're going to compute the distance with\&. 
+.br
+\fImaxIdx\fP The last point we're going to compute the distance with\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A map associating the euclidean distance between keypoint \fIpt\fP and all the other keypoints in a [\fIminIdx\fP, \fImaxIdx\fP] window and the index of the corresponding other keypoints\&. 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file InterestPoints\&.cpp\&.
+.SS "int InterestPoints::size () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+The number of \fBInterestPoint\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file InterestPoints\&.cpp\&.
+.SS "void InterestPoints::sort ()"
+This function sorts the two vectors by angle and norm\&. 
+.PP
+Definition at line 34 of file InterestPoints\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double InterestPoints::_angleThreshold = 2\fC [static]\fP"
+The threshold for the computation of the window in the angles vector 
+.PP
+Definition at line 78 of file InterestPoints\&.hpp\&.
+.SS "double InterestPoints::_normThreshold = 0\&.8\fC [static]\fP"
+The threshold for the computation of the window in the norms vector 
+.PP
+Definition at line 80 of file InterestPoints\&.hpp\&.
+.SS "std::vector<std::shared_ptr<\fBInterestPoint\fP> > defals::InterestPoints::_pointsSortedAngle\fC [private]\fP"
+Pointers to the keypoints sorted by angles 
+.PP
+Definition at line 89 of file InterestPoints\&.hpp\&.
+.SS "std::vector<std::shared_ptr<\fBInterestPoint\fP> > defals::InterestPoints::_pointsSortedNorm\fC [private]\fP"
+Pointers to the keypoints sorted by norms of their descriptors 
+.PP
+Definition at line 91 of file InterestPoints\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="copyMoveCheck"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="copyMoveCheck">
+				<Option output="/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/copyMoveCheck" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 copyMoveCheck"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="copyMoveCheck/fast">
+				<Option output="/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/copyMoveCheck" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 copyMoveCheck/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rubytox/Documents/STAGE/2A/FINAL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/include/ClusteredLine.hpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/include/DetectorOptions.hpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/include/InterestPoint.hpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/include/InterestPoints.hpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/include/copyMoveDetector.hpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/include/dbscan.hpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/include/surf.hpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/src/ClusteredLine.cpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/src/InterestPoint.cpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/src/InterestPoints.cpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/src/copyMoveDetector.cpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/src/dbscan.cpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/src/line.cpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/src/main.cpp">
+			<Option target="copyMoveCheck"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/rubytox/Documents/STAGE/2A/FINAL/../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,51 @@
+\subsection*{Présentation de l\textquotesingle{}application}
+
+Le programme réalisé ici s\textquotesingle{}appelle {\ttfamily main} et utilise la bibliothèque Open\+CV afin d\textquotesingle{}appliquer l\textquotesingle{}algorithme S\+U\+RF sur des images. Etant données deux images passées en paramètre au programme, l\textquotesingle{}algorithme \+:
+\begin{DoxyItemize}
+\item calcule les points d\textquotesingle{}intérêts des deux images ;
+\item détermine les correspondances entre les points d\textquotesingle{}intérêts des deux images, et les trace \+:
+\begin{DoxyItemize}
+\item dans un premier temps le programme prend en paramètres une image et un extrait de cette image ;
+\item dans un second temps, ce programme doit ne prendre qu\textquotesingle{}une seule image en paramètre et trouver les configurations similaires dans l\textquotesingle{}image.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Pour le second point, j\textquotesingle{}ai d\textquotesingle{}abord commencé par réaliser la première étape de l\textquotesingle{}algorithme, mais en passant en paramètre deux fois la même image \+: on trouve ici naturellement beaucoup de correspondances. Cependant, si une partie de l\textquotesingle{}image a été copiée/déplacée dans l\textquotesingle{}image, alors l\textquotesingle{}algorithme devrait également trouver une correspondance entre la zone d\textquotesingle{}origine et la zone déplacée \+: ainsi, j\textquotesingle{}ai commencé par filtrer les correspondances en ne conservant que celles dont le point de départ sur la première image est différent du point d\textquotesingle{}arrivée de la seconde image ; comme ceci on élimine les correspondances évidentes.
+
+L\textquotesingle{}algorithme marche sur des exemples très simples et grossiers, à priori sans appliquer de transformations type rotation/homothétie.
+
+\subsection*{Compilation de l\textquotesingle{}application}
+
+L\textquotesingle{}algorithme S\+U\+RF est un algorithme propriétaire, et Open\+CV ne l\textquotesingle{}inclut plus de base. Il a donc fallu que je recompile la bibliothèque pour pouvoir m\textquotesingle{}en servir. Pour ce faire, j\textquotesingle{}ai téléchargé les sources de Open\+CV ainsi que le repository github de {\ttfamily opencv\+\_\+contrib}. Ensuite, on se place dans le répertoire des sources de Open\+CV et on exécute \+: 
+\begin{DoxyCode}
+$ cd sources\_opencv
+$ mkdir build
+$ cd build
+$ cmake -DOPENCV\_ENABLE\_NONFREE:BOOL=ON -DOPENCV\_EXTRA\_MODULES\_PATH=<chemin\_vers\_opencv\_contrib>/modules ..
+$ make -j$(nproc)
+$ sudo make install
+\end{DoxyCode}
+
+
+La ligne 4 est particulièrement importante \+: si on ne met pas le flag {\ttfamily O\+P\+E\+N\+C\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+N\+F\+R\+EE} à vrai, on aura compilé la bibliothèque mais les fonctionnalités propriétaires ne seront pas activées.
+
+Une fois ceci fait, on devrait disposer de la bibliothèque Open\+C\+V4. On peut ensuite compiler l\textquotesingle{}application de la manière suivante \+: 
+\begin{DoxyCode}
+Dans le dossier Week1/images
+$ cd build
+$ cmake ..
+$ make
+\end{DoxyCode}
+
+
+On lance alors l\textquotesingle{}application avec \+: 
+\begin{DoxyCode}
+$ build/main extrait.jpg image\_source.jpg
+\end{DoxyCode}
+ Une fenêtre devrait apparaître, contenant les deux images et les lignes représentant les correspondances trouvées. On appuie alors sur la touche {\ttfamily s} pour sauvegarder l\textquotesingle{}image, qui sera sauvegardée sous le nom {\ttfamily extrait\+\_\+keypoints.\+jpg}.
+
+\subsection*{Paramètres modifiables de l\textquotesingle{}algorithme}
+
+Le plus gros du code se passe principalement dans la fonction {\ttfamily surf\+\_\+matching} qui prend les deux images en paramètres ainsi que la valeur minimale du seuil Hessien \+: plus le seuil est grand, plus les points d\textquotesingle{}intérêts sont sélectifs et donc on a moins de correspondances à la fin, mais elles sont normalement plus précises. Dans le code actuel, le seuil est mis à 300.
+
+Ensuite, si on veut passer du mode \char`\"{}deux images et correspondances\char`\"{} au mode \char`\"{}correspondances sur une seule image\char`\"{}, il y a du code à commenter/décommenter \+: je pense que je mettrai plutôt un argument en plus à passer au programme afin de décider quel mode utiliser, mais ce n\textquotesingle{}est pas encore fait. 

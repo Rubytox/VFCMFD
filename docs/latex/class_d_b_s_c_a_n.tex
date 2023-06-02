@@ -1,0 +1,239 @@
+\hypertarget{class_d_b_s_c_a_n}{}\section{D\+B\+S\+C\+AN Class Reference}
+\label{class_d_b_s_c_a_n}\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+
+
+{\ttfamily \#include $<$dbscan.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_d_b_s_c_a_n_a3cfe5615c80c46d3e309dba2ab506dd7}{D\+B\+S\+C\+AN} (unsigned int min\+Pts, float eps, std\+::vector$<$ \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} $>$ \&lines)
+\item 
+std\+::vector$<$ \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} $>$ \hyperlink{class_d_b_s_c_a_n_a0085bd9fa516dc3c1a62da8fcb3ba6de}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{class_d_b_s_c_a_n_a29153d6147fccd431c58f17840ee7bc0}{calculate\+Distance} (const \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&point\+Core, const \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&point\+Target, double _wx=1, double _wy=1, double _wtheta=1, double wl=1)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_d_b_s_c_a_n_acdcfeb8f4e47927b83ade8256d677c10}{calculate\+Cluster} (\hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&point)
+\item 
+int \hyperlink{class_d_b_s_c_a_n_ace87c3c6b0e4b5bb50ccd0156e2319b7}{expand\+Cluster} (\hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&line, int cluster\+ID)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} $>$ \hyperlink{class_d_b_s_c_a_n_af7e2429a85e2246405d78e968435c910}{\+\_\+lines}
+\item 
+unsigned int \hyperlink{class_d_b_s_c_a_n_af45306ee35215b8c0be32b04f176d49d}{\+\_\+point\+Size}
+\item 
+unsigned int \hyperlink{class_d_b_s_c_a_n_a5bd2e6ab5316035d7b5448d00f4108e5}{\+\_\+min\+Points}
+\item 
+float \hyperlink{class_d_b_s_c_a_n_a4e9de40c172ec17ad4b291d5ea71466a}{\+\_\+epsilon}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class stands for a scanner using \hyperlink{class_d_b_s_c_a_n}{D\+B\+S\+C\+AN} algorithm. It specializes in the detection of dense clusters of segments represented in 4D by\+: (x, y, theta, l) where\+:
+\begin{DoxyItemize}
+\item (x,y) \+: closest end of the segment to (0, 0)
+\item theta \+: the polar angle of the segment
+\item l \+: the length of the segment 
+\end{DoxyItemize}
+
+Definition at line 25 of file dbscan.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_b_s_c_a_n_a3cfe5615c80c46d3e309dba2ab506dd7}\label{class_d_b_s_c_a_n_a3cfe5615c80c46d3e309dba2ab506dd7}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{D\+B\+S\+C\+A\+N()}{DBSCAN()}}
+{\footnotesize\ttfamily D\+B\+S\+C\+A\+N\+::\+D\+B\+S\+C\+AN (\begin{DoxyParamCaption}\item[{unsigned int}]{min\+Pts,  }\item[{float}]{eps,  }\item[{std\+::vector$<$ \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} $>$ \&}]{lines }\end{DoxyParamCaption})}
+
+Constructs a scanner using \hyperlink{class_d_b_s_c_a_n}{D\+B\+S\+C\+AN} algorithm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Pts} & Minimal number of points required in a eps-\/neighbourhood. \\
+\hline
+{\em eps} & Radius of the neighbourhood. \\
+\hline
+{\em lines} & The lines to cluster. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file dbscan.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_b_s_c_a_n_acdcfeb8f4e47927b83ade8256d677c10}\label{class_d_b_s_c_a_n_acdcfeb8f4e47927b83ade8256d677c10}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!calculate\+Cluster@{calculate\+Cluster}}
+\index{calculate\+Cluster@{calculate\+Cluster}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{calculate\+Cluster()}{calculateCluster()}}
+{\footnotesize\ttfamily vector$<$ int $>$ D\+B\+S\+C\+A\+N\+::calculate\+Cluster (\begin{DoxyParamCaption}\item[{\hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Computes the eps-\/neighbourhood of a line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The line at the center of the neighbourhood.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of indices representing the neighbour of {\itshape line} in \+\_\+\+\_\+lines\+\_\+. 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file dbscan.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_b_s_c_a_n_acdcfeb8f4e47927b83ade8256d677c10_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_d_b_s_c_a_n_a29153d6147fccd431c58f17840ee7bc0}\label{class_d_b_s_c_a_n_a29153d6147fccd431c58f17840ee7bc0}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!calculate\+Distance@{calculate\+Distance}}
+\index{calculate\+Distance@{calculate\+Distance}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{calculate\+Distance()}{calculateDistance()}}
+{\footnotesize\ttfamily static double D\+B\+S\+C\+A\+N\+::calculate\+Distance (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&}]{point\+Core,  }\item[{const \hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&}]{point\+Target,  }\item[{double}]{_wx = {\ttfamily 1},  }\item[{double}]{_wy = {\ttfamily 1},  }\item[{double}]{_wtheta = {\ttfamily 1},  }\item[{double}]{wl = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+This function computes the distance between two segments defined as said above. Each of the four parameters has a weight that can be used to give more or less importance to one parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+Core} & One of the lines. \\
+\hline
+{\em point\+Target} & The other line. \\
+\hline
+{\em _wx} & The weight on parameter x. \\
+\hline
+{\em _wy} & The weight on parameter y. \\
+\hline
+{\em _wtheta} & The weight on parameter theta. \\
+\hline
+{\em wl} & The weight on parameter l.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The weighted distance of the two lines. 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file dbscan.\+hpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_b_s_c_a_n_a29153d6147fccd431c58f17840ee7bc0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_d_b_s_c_a_n_ace87c3c6b0e4b5bb50ccd0156e2319b7}\label{class_d_b_s_c_a_n_ace87c3c6b0e4b5bb50ccd0156e2319b7}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!expand\+Cluster@{expand\+Cluster}}
+\index{expand\+Cluster@{expand\+Cluster}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{expand\+Cluster()}{expandCluster()}}
+{\footnotesize\ttfamily int D\+B\+S\+C\+A\+N\+::expand\+Cluster (\begin{DoxyParamCaption}\item[{\hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line} \&}]{line,  }\item[{int}]{cluster\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Given a line, creates new cluster from it, adds line to another cluster or classifies it as noise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A line that hasn\textquotesingle{}t been clustered yet. \\
+\hline
+{\em cluster\+ID} & The ID of the cluster we\textquotesingle{}re expanding.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+U\+C\+C\+E\+SS if the line has been successfully classified. F\+A\+I\+L\+R\+UE if the line has been classified as noise. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file dbscan.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_b_s_c_a_n_ace87c3c6b0e4b5bb50ccd0156e2319b7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_b_s_c_a_n_ace87c3c6b0e4b5bb50ccd0156e2319b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_d_b_s_c_a_n_a0085bd9fa516dc3c1a62da8fcb3ba6de}\label{class_d_b_s_c_a_n_a0085bd9fa516dc3c1a62da8fcb3ba6de}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!run@{run}}
+\index{run@{run}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classdefals_1_1_clustered_line}{Clustered\+Line} $>$ D\+B\+S\+C\+A\+N\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the method that starts the \hyperlink{class_d_b_s_c_a_n}{D\+B\+S\+C\+AN} algorithm.
+
+\begin{DoxyReturn}{Returns}
+A vector containing the lines with their \+\_\+id\+Cluster set. 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file dbscan.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_b_s_c_a_n_a4e9de40c172ec17ad4b291d5ea71466a}\label{class_d_b_s_c_a_n_a4e9de40c172ec17ad4b291d5ea71466a}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!\+\_\+epsilon@{\+\_\+epsilon}}
+\index{\+\_\+epsilon@{\+\_\+epsilon}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{\+\_\+epsilon}{\_epsilon}}
+{\footnotesize\ttfamily float D\+B\+S\+C\+A\+N\+::\+\_\+epsilon\hspace{0.3cm}{\ttfamily [private]}}
+
+The radius of the considered neighbourhood 
+
+Definition at line 74 of file dbscan.\+hpp.
+
+\mbox{\Hypertarget{class_d_b_s_c_a_n_af7e2429a85e2246405d78e968435c910}\label{class_d_b_s_c_a_n_af7e2429a85e2246405d78e968435c910}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!\+\_\+lines@{\+\_\+lines}}
+\index{\+\_\+lines@{\+\_\+lines}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{\+\_\+lines}{\_lines}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classdefals_1_1_clustered_line}{defals\+::\+Clustered\+Line}$>$ D\+B\+S\+C\+A\+N\+::\+\_\+lines\hspace{0.3cm}{\ttfamily [private]}}
+
+The lines we want to cluster 
+
+Definition at line 68 of file dbscan.\+hpp.
+
+\mbox{\Hypertarget{class_d_b_s_c_a_n_a5bd2e6ab5316035d7b5448d00f4108e5}\label{class_d_b_s_c_a_n_a5bd2e6ab5316035d7b5448d00f4108e5}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!\+\_\+min\+Points@{\+\_\+min\+Points}}
+\index{\+\_\+min\+Points@{\+\_\+min\+Points}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{\+\_\+min\+Points}{\_minPoints}}
+{\footnotesize\ttfamily unsigned int D\+B\+S\+C\+A\+N\+::\+\_\+min\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+The minimal number of points in a neighbourhood 
+
+Definition at line 72 of file dbscan.\+hpp.
+
+\mbox{\Hypertarget{class_d_b_s_c_a_n_af45306ee35215b8c0be32b04f176d49d}\label{class_d_b_s_c_a_n_af45306ee35215b8c0be32b04f176d49d}} 
+\index{D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}!\+\_\+point\+Size@{\+\_\+point\+Size}}
+\index{\+\_\+point\+Size@{\+\_\+point\+Size}!D\+B\+S\+C\+AN@{D\+B\+S\+C\+AN}}
+\subsubsection{\texorpdfstring{\+\_\+point\+Size}{\_pointSize}}
+{\footnotesize\ttfamily unsigned int D\+B\+S\+C\+A\+N\+::\+\_\+point\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+The number of lines 
+
+Definition at line 70 of file dbscan.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{dbscan_8hpp}{dbscan.\+hpp}\item 
+src/\hyperlink{dbscan_8cpp}{dbscan.\+cpp}\end{DoxyCompactItemize}

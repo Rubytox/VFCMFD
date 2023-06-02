@@ -1,0 +1,46 @@
+\hypertarget{line_8hpp}{}\section{include/line.hpp File Reference}
+\label{line_8hpp}\index{include/line.\+hpp@{include/line.\+hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/features2d.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/xfeatures2d/nonfree.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}Interest\+Point.\+hpp\char`\"{}}\newline
+Include dependency graph for line.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{line_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{line_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdefals_1_1_line}{defals\+::\+Line}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedefals}{defals}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespacedefals_a4c55b460a9efaca04446cfddd1c947f6}{defals\+::operator==} (const Line \&first, const Line \&second)
+\item 
+bool \hyperlink{namespacedefals_a56782f10ddcb64e96fb17b2ee89fe6c3}{defals\+::operator!=} (const Line \&first, const Line \&second)
+\item 
+std\+::ostream \& \hyperlink{namespacedefals_a41fe3a74a9f03aa762cd1723284947f8}{defals\+::operator$<$$<$} (std\+::ostream \&os, const Line \&line)
+\item 
+cv\+::\+Mat \hyperlink{namespacedefals_a9b63764779b202012956ad5bb5d24442}{defals\+::full\+Plane} (const cv\+::\+Mat \&src, std\+::vector$<$ Line $>$ \&lines, int thickness=3)
+\end{DoxyCompactItemize}

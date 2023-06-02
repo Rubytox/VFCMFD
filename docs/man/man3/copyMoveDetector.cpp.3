@@ -1,0 +1,64 @@
+.TH "src/copyMoveDetector.cpp" 3 "Tue Jul 7 2020" "copyMoveCheck" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/copyMoveDetector.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./include/copyMoveDetector\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > T \fBmedian\fP (vector< T > &tab)"
+.br
+.ti -1c
+.RI "string \fBinfoKeypoint\fP (const \fBInterestPoint\fP &pt)"
+.br
+.ti -1c
+.RI "double \fBshoelaceArea\fP (const vector< Point2f > &points)"
+.br
+.ti -1c
+.RI "Point2f \fBpointFrom4D\fP (int x1, int y1, double theta, double l)"
+.br
+.ti -1c
+.RI "\fBLine\fP \fBgenInitialLine\fP (int maxWidth, int maxHeight)"
+.br
+.ti -1c
+.RI "\fBLine\fP \fBgenParallelLine\fP (int maxWidth, int maxHeight, const \fBLine\fP &initial)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBLine\fP genInitialLine (int maxWidth, int maxHeight)"
+
+.PP
+Definition at line 732 of file copyMoveDetector\&.cpp\&.
+.SS "\fBLine\fP genParallelLine (int maxWidth, int maxHeight, const \fBLine\fP & initial)"
+
+.PP
+Definition at line 779 of file copyMoveDetector\&.cpp\&.
+.SS "string infoKeypoint (const \fBInterestPoint\fP & pt)"
+
+.PP
+Definition at line 393 of file copyMoveDetector\&.cpp\&.
+.SS "template<class T > T median (vector< T > & tab)"
+
+.PP
+Definition at line 123 of file copyMoveDetector\&.cpp\&.
+.SS "Point2f pointFrom4D (int x1, int y1, double theta, double l)"
++=================+ | RANDOM SEGMENTS | +=================+
+.PP
+Those functions should not be useful but I keep them just in case\&. 
+.PP
+Definition at line 712 of file copyMoveDetector\&.cpp\&.
+.SS "double shoelaceArea (const vector< Point2f > & points)"
+
+.PP
+Definition at line 667 of file copyMoveDetector\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for copyMoveCheck from the source code\&.

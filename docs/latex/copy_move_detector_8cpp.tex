@@ -1,0 +1,147 @@
+\hypertarget{copy_move_detector_8cpp}{}\section{src/copy\+Move\+Detector.cpp File Reference}
+\label{copy_move_detector_8cpp}\index{src/copy\+Move\+Detector.\+cpp@{src/copy\+Move\+Detector.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/copy\+Move\+Detector.\+hpp\char`\"{}}\newline
+Include dependency graph for copy\+Move\+Detector.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{copy_move_detector_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{copy_move_detector_8cpp_ad63f6c6d84e820f2f0d2bf5f44d63b3a}{median} (vector$<$ T $>$ \&tab)
+\item 
+string \hyperlink{copy_move_detector_8cpp_a3bdd28dca753d5996afd5d61372dfa27}{info\+Keypoint} (const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&pt)
+\item 
+double \hyperlink{copy_move_detector_8cpp_af2fbebfd055d9ab6dab79abb1a457bc0}{shoelace\+Area} (const vector$<$ Point2f $>$ \&points)
+\item 
+Point2f \hyperlink{copy_move_detector_8cpp_a47f0575bc7055303778ca4e36aa65856}{point\+From4D} (int x1, int y1, double theta, double l)
+\item 
+\hyperlink{classdefals_1_1_line}{Line} \hyperlink{copy_move_detector_8cpp_a913905d28dadba254bab666aad6b7db6}{gen\+Initial\+Line} (int max\+Width, int max\+Height)
+\item 
+\hyperlink{classdefals_1_1_line}{Line} \hyperlink{copy_move_detector_8cpp_ae5d7e0a849d271e27cfbec973fff560a}{gen\+Parallel\+Line} (int max\+Width, int max\+Height, const \hyperlink{classdefals_1_1_line}{Line} \&initial)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{copy_move_detector_8cpp_a913905d28dadba254bab666aad6b7db6}\label{copy_move_detector_8cpp_a913905d28dadba254bab666aad6b7db6}} 
+\index{copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}!gen\+Initial\+Line@{gen\+Initial\+Line}}
+\index{gen\+Initial\+Line@{gen\+Initial\+Line}!copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}}
+\subsubsection{\texorpdfstring{gen\+Initial\+Line()}{genInitialLine()}}
+{\footnotesize\ttfamily \hyperlink{classdefals_1_1_line}{Line} gen\+Initial\+Line (\begin{DoxyParamCaption}\item[{int}]{max\+Width,  }\item[{int}]{max\+Height }\end{DoxyParamCaption})}
+
+
+
+Definition at line 732 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{copy_move_detector_8cpp_a913905d28dadba254bab666aad6b7db6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{copy_move_detector_8cpp_a913905d28dadba254bab666aad6b7db6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{copy_move_detector_8cpp_ae5d7e0a849d271e27cfbec973fff560a}\label{copy_move_detector_8cpp_ae5d7e0a849d271e27cfbec973fff560a}} 
+\index{copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}!gen\+Parallel\+Line@{gen\+Parallel\+Line}}
+\index{gen\+Parallel\+Line@{gen\+Parallel\+Line}!copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}}
+\subsubsection{\texorpdfstring{gen\+Parallel\+Line()}{genParallelLine()}}
+{\footnotesize\ttfamily \hyperlink{classdefals_1_1_line}{Line} gen\+Parallel\+Line (\begin{DoxyParamCaption}\item[{int}]{max\+Width,  }\item[{int}]{max\+Height,  }\item[{const \hyperlink{classdefals_1_1_line}{Line} \&}]{initial }\end{DoxyParamCaption})}
+
+
+
+Definition at line 779 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{copy_move_detector_8cpp_ae5d7e0a849d271e27cfbec973fff560a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{copy_move_detector_8cpp_ae5d7e0a849d271e27cfbec973fff560a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{copy_move_detector_8cpp_a3bdd28dca753d5996afd5d61372dfa27}\label{copy_move_detector_8cpp_a3bdd28dca753d5996afd5d61372dfa27}} 
+\index{copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}!info\+Keypoint@{info\+Keypoint}}
+\index{info\+Keypoint@{info\+Keypoint}!copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}}
+\subsubsection{\texorpdfstring{info\+Keypoint()}{infoKeypoint()}}
+{\footnotesize\ttfamily string info\+Keypoint (\begin{DoxyParamCaption}\item[{const \hyperlink{classdefals_1_1_interest_point}{Interest\+Point} \&}]{pt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 393 of file copy\+Move\+Detector.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{copy_move_detector_8cpp_a3bdd28dca753d5996afd5d61372dfa27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{copy_move_detector_8cpp_a3bdd28dca753d5996afd5d61372dfa27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{copy_move_detector_8cpp_ad63f6c6d84e820f2f0d2bf5f44d63b3a}\label{copy_move_detector_8cpp_ad63f6c6d84e820f2f0d2bf5f44d63b3a}} 
+\index{copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}!median@{median}}
+\index{median@{median}!copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}}
+\subsubsection{\texorpdfstring{median()}{median()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T median (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{tab }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file copy\+Move\+Detector.\+cpp.
+
+\mbox{\Hypertarget{copy_move_detector_8cpp_a47f0575bc7055303778ca4e36aa65856}\label{copy_move_detector_8cpp_a47f0575bc7055303778ca4e36aa65856}} 
+\index{copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}!point\+From4D@{point\+From4D}}
+\index{point\+From4D@{point\+From4D}!copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}}
+\subsubsection{\texorpdfstring{point\+From4\+D()}{pointFrom4D()}}
+{\footnotesize\ttfamily Point2f point\+From4D (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{double}]{theta,  }\item[{double}]{l }\end{DoxyParamCaption})}
+
++=================+ $\vert$ R\+A\+N\+D\+OM S\+E\+G\+M\+E\+N\+TS $\vert$ +=================+
+
+Those functions should not be useful but I keep them just in case. 
+
+Definition at line 712 of file copy\+Move\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{copy_move_detector_8cpp_a47f0575bc7055303778ca4e36aa65856_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{copy_move_detector_8cpp_af2fbebfd055d9ab6dab79abb1a457bc0}\label{copy_move_detector_8cpp_af2fbebfd055d9ab6dab79abb1a457bc0}} 
+\index{copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}!shoelace\+Area@{shoelace\+Area}}
+\index{shoelace\+Area@{shoelace\+Area}!copy\+Move\+Detector.\+cpp@{copy\+Move\+Detector.\+cpp}}
+\subsubsection{\texorpdfstring{shoelace\+Area()}{shoelaceArea()}}
+{\footnotesize\ttfamily double shoelace\+Area (\begin{DoxyParamCaption}\item[{const vector$<$ Point2f $>$ \&}]{points }\end{DoxyParamCaption})}
+
+
+
+Definition at line 667 of file copy\+Move\+Detector.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{copy_move_detector_8cpp_af2fbebfd055d9ab6dab79abb1a457bc0_icgraph}
+\end{center}
+\end{figure}

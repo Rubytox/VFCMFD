@@ -1,0 +1,8 @@
+<map id="defals::InterestPoint::getAngleIdx" name="defals::InterestPoint::getAngleIdx">
+<area shape="rect" id="node2" href="$copy_move_detector_8cpp.html#a3bdd28dca753d5996afd5d61372dfa27" title="infoKeypoint" alt="" coords="218,13,313,39"/>
+<area shape="rect" id="node6" href="$classdefals_1_1_interest_points.html#ac7953a26838e4b9ceb0546e6ace5f161" title="defals::InterestPoints\l::similarityAngle" alt="" coords="192,64,339,105"/>
+<area shape="rect" id="node7" href="$classdefals_1_1_interest_points.html#a5f22afcf31b278e2c57799328103c85a" title="defals::InterestPoints\l::getRangeAngle" alt="" coords="192,129,339,171"/>
+<area shape="rect" id="node3" href="$classdefals_1_1copy_move_detector.html#ab506d8bea186d8b17e0c46b8dc94be4b" title="defals::copyMoveDetector\l::computeBetterMatch" alt="" coords="387,5,561,47"/>
+<area shape="rect" id="node4" href="$namespacedefals.html#aec8e056bd901239f1b5fe64dd0a1645f" title="defals::runBetterMatches" alt="" coords="609,13,777,39"/>
+<area shape="rect" id="node5" href="$classdefals_1_1copy_move_detector.html#ada9b809bd69be7dc9a6535b1c07967b7" title="defals::copyMoveDetector\l::computeBetterMatches" alt="" coords="825,5,1000,47"/>
+</map>
